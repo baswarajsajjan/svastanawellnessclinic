@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svastana Wellness Clinic | Naturopathic Care by Dr. G. Monica Sravanthi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --sage: #2f7a57;
+    --sage-light: #eef7f1;
+    --sage-dark: #1f5c40;
+    --teal: #1f758f;
+    --teal-soft: #dff0f5;
+    --cream: #f6f1e8;
+    --warm-white: #fcfbf8;
+    --surface: rgba(255,255,255,0.78);
+    --charcoal: #1b241d;
+    --muted: #627161;
+    --gold: #b99661;
+    --gold-soft: #f2e6d0;
+    --border: rgba(47,122,87,0.14);
+    --shadow-sm: 0 10px 30px rgba(26, 44, 33, 0.06);
+    --shadow-md: 0 18px 60px rgba(26, 44, 33, 0.1);
+    --radius-sm: 10px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background:
+      radial-gradient(circle at top left, rgba(223,240,245,0.65), transparent 26%),
+      radial-gradient(circle at right 20%, rgba(238,247,241,0.95), transparent 28%),
+      var(--warm-white);
+    color: var(--charcoal);
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  a, button, input, textarea { transition: all 0.25s ease; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(calc(100% - 2rem), 1220px);
+    z-index: 100;
+    padding: 0.9rem 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(252,251,248,0.78);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.65);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+
+  .nav-logo-wordmark { gap: 0.9rem; }
+  .logo-mark {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--sage-dark), var(--teal));
+    color: #fff; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+    box-shadow: 0 10px 24px rgba(27,127,160,0.18);
+  }
+  .logo-stack { display: flex; flex-direction: column; line-height: 1.02; }
+  .logo-stack strong {
+    font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--teal);
+    letter-spacing: 0.02em;
+  }
+  .logo-stack em {
+    font-style: normal; text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 0.62rem; color: var(--sage); margin-top: 0.2rem;
+  }
+  .portrait-placeholder {
+    width: 100%; height: 100%; min-height: 420px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 2rem;
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,0.55), transparent 35%),
+      linear-gradient(160deg, #dceee3 0%, #bddacb 45%, #a6c7b4 100%);
+    color: var(--sage-dark);
+  }
+  .portrait-placeholder span {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500;
+    line-height: 1.1; max-width: 10ch;
+  }
+  .portrait-placeholder small {
+    margin-top: 0.75rem; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .portrait-placeholder-secondary { min-height: 100%; border-radius: inherit; }
+  .nav-logo img { height: 56px; width: auto; object-fit: contain; }
+  nav ul { list-style: none; display: flex; gap: 1.4rem; align-items: center; }
+  nav ul a {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-decoration: none;
+    padding: 0.55rem 0.4rem;
+    position: relative;
+  }
+  nav ul a::after {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    right: 0.45rem;
+    bottom: 0.25rem;
+    height: 1px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+  nav ul a:hover { color: var(--sage-dark); }
+  nav ul a:hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+    color: #fff !important;
+    padding: 0.8rem 1.35rem;
+    border-radius: 999px;
+    box-shadow: 0 10px 25px rgba(31,92,64,0.24);
+  }
+  .nav-cta::after { display: none; }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(31,92,64,0.28);
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 7.8rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before,
+  #hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    z-index: 0;
+  }
+  #hero::before {
+    width: 340px; height: 340px;
+    background: rgba(223,240,245,0.8);
+    top: 7%; left: -70px;
+  }
+  #hero::after {
+    width: 420px; height: 420px;
+    background: rgba(225,240,232,0.95);
+    right: -120px; top: 12%;
+  }
+  .hero-text {
+    padding: 2rem 3rem 2rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .hero-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 4.9rem);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+    margin-bottom: 1.3rem;
+  }
+  .hero-text h1 em {
+    color: var(--sage);
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: rgba(185,150,97,0.28);
+    text-decoration-thickness: 7px;
+    text-underline-offset: -2px;
+  }
+  .hero-text p {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 2rem;
+    line-height: 1.9;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary,
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0.9rem 1.65rem;
+    font-family: var(--font-body);
+    font-size: 0.77rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(31,92,64,0.18);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(31,92,64,0.22); }
+  .btn-outline {
+    border: 1px solid rgba(31,92,64,0.18);
+    color: var(--sage-dark);
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(8px);
+  }
+  .btn-outline:hover {
+    background: var(--sage-dark);
+    border-color: var(--sage-dark);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .hero-image {
+    position: relative;
+    height: min(85vh, 760px);
+    overflow: hidden;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    background: linear-gradient(160deg, #d4e8da 0%, #b8d4c2 100%);
+    box-shadow: var(--shadow-md);
+    z-index: 1;
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.12));
+  }
+  .hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: rgba(252,251,248,0.88);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.85);
+    padding: 1rem 1.35rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    min-width: 220px;
+    z-index: 2;
+  }
+  .hero-badge p {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-bottom: 0.24rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .hero-badge strong {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: linear-gradient(90deg, var(--sage-dark), #255a63, var(--sage-dark));
+    padding: 0.95rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(255,255,255,0.08);
+  }
+  .marquee-inner { display: inline-block; animation: scroll-left 34s linear infinite; }
+  .marquee-inner span {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.76);
+    margin: 0 2rem;
+  }
+  .marquee-inner span::before { content: '✦'; margin-right: 2rem; color: #efd3a2; }
+  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* SHARED */
+  section { padding: 6.5rem 0; position: relative; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+  .section-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .section-tag::after {
+    content: '';
+    flex: 0 0 42px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 3.4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+    margin-bottom: 1.25rem;
+  }
+  h2.section-title em { color: var(--sage); font-style: italic; }
+
+  /* ABOUT */
+  #about { background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(238,247,241,0.5)); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 4.5rem;
+    align-items: center;
+  }
+  .about-image-wrap { position: relative; }
+  .about-image-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(160deg, #d4e8da, #b8d4c2);
+    box-shadow: var(--shadow-md);
+  }
+  .about-image-box img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .about-accent {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(47,122,87,0.22);
+    border-radius: 28px;
+    z-index: -1;
+  }
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 0.96rem;
+    line-height: 1.95;
+  }
+  .about-credentials {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .credential {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(255,255,255,0.75);
+    box-shadow: var(--shadow-sm);
+  }
+  .credential strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .credential span {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* SERVICES */
+  #services { background: linear-gradient(180deg, var(--cream), #f8f4ed); }
+  .services-header { text-align: center; max-width: 680px; margin: 0 auto 3.5rem; }
+  .services-header .section-tag { justify-content: center; }
+  .services-header .section-tag::after { display: none; }
+  .services-header .section-tag::before {
+    content: '';
+    flex: 0 0 42px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .two-col-services { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .service-group {
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(255,255,255,0.82);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
+  }
+  .service-group h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .service-list { list-style: none; display: grid; gap: 0.65rem; }
+  .service-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.58);
+    border: 1px solid rgba(47,122,87,0.08);
+  }
+  .service-list li:hover {
+    transform: translateX(4px);
+    background: var(--sage-light);
+    border-color: rgba(47,122,87,0.18);
+  }
+  .service-list li::before {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage), var(--teal));
+    flex-shrink: 0;
+    box-shadow: 0 0 0 5px rgba(47,122,87,0.08);
+  }
+
+  /* PHILOSOPHY */
+  #philosophy {
+    background: linear-gradient(135deg, #234d38 0%, #1e5d68 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  #philosophy::before,
+  #philosophy::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  #philosophy::before {
+    top: -110px; right: -80px; width: 360px; height: 360px;
+  }
+  #philosophy::after {
+    left: -80px; bottom: -120px; width: 260px; height: 260px;
+  }
+  .philosophy-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .philosophy-inner .section-tag { justify-content: center; color: rgba(255,255,255,0.58); }
+  .philosophy-inner .section-tag::after { background: rgba(255,255,255,0.28); }
+  .philosophy-inner h2.section-title { color: #fff; }
+  .philosophy-inner h2.section-title em { color: #c4ebd2; }
+  .philosophy-inner p { color: rgba(255,255,255,0.82); font-size: 1rem; line-height: 1.95; margin-bottom: 0.95rem; }
+  .philosophy-inner .btn-primary {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.28);
+    box-shadow: none;
+    margin-top: 1.2rem;
+  }
+  .philosophy-inner .btn-primary:hover { background: rgba(255,255,255,0.2); }
+
+  /* CONTACT */
+  #contact { background: linear-gradient(180deg, var(--warm-white), rgba(223,240,245,0.35)); }
+  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: start; }
+  .contact-info p { color: var(--muted); font-size: 0.96rem; line-height: 1.95; margin-bottom: 1.8rem; }
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.74);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 28px;
+    padding: 2.2rem;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(12px);
+  }
+  .contact-form-wrap h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+    color: var(--charcoal);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1rem; }
+  .form-group label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-group input, .form-group textarea {
+    border: 1px solid rgba(47,122,87,0.12);
+    background: rgba(252,251,248,0.88);
+    padding: 0.9rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    border-radius: 16px;
+    outline: none;
+    width: 100%;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: rgba(47,122,87,0.4);
+    box-shadow: 0 0 0 4px rgba(47,122,87,0.08);
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .wa-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #25d366, #20b857);
+    color: #fff;
+    padding: 0.95rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.6rem;
+    box-shadow: 0 14px 34px rgba(37,211,102,0.2);
+  }
+  .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 42px rgba(37,211,102,0.24); }
+
+  /* FOOTER */
+  footer {
+    background: linear-gradient(180deg, #18261f, #111b16);
+    color: rgba(255,255,255,0.64);
+    padding: 4rem 0 2rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+  .footer-logo-name {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .footer-logo-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-tagline { font-size: 0.84rem; line-height: 1.8; max-width: 320px; }
+  .footer-col h4 {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul a {
+    color: rgba(255,255,255,0.66);
+    text-decoration: none;
+    font-size: 0.88rem;
+  }
+  .footer-col ul a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.76rem;
+  }
+  .social-links { display: flex; gap: 0.8rem; }
+  .social-links a {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    background: rgba(255,255,255,0.03);
+  }
+  .social-links a:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1080px) {
+    .hero-text { padding: 2rem 2rem 2rem 3rem; }
+    .hero-image { border-radius: 28px; margin-right: 1.2rem; }
+  }
+  @media (max-width: 900px) {
+    nav {
+      top: 0;
+      width: 100%;
+      transform: none;
+      left: 0;
+      border-radius: 0;
+      padding: 0.9rem 1.2rem;
+    }
+    #hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      gap: 1.5rem;
+      padding-top: 7rem;
+    }
+    .hero-text { padding: 1rem 2rem 0; }
+    .hero-image {
+      height: 420px;
+      margin: 0 1.25rem;
+      border-radius: 28px;
+    }
+    .hero-badge { left: 1.25rem; bottom: 1.25rem; }
+    .about-grid, .two-col-services, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .logo-stack strong { font-size: 1rem; }
+    .logo-mark { width: 42px; height: 42px; border-radius: 12px; }
+    section { padding: 5rem 0; }
+    .container { padding: 0 1.15rem; }
+    nav ul li:not(:last-child) { display: none; }
+    .nav-logo img { height: 48px; }
+    .hero-text { padding: 0 1.2rem; }
+    .hero-text h1 { font-size: 2.7rem; }
+    .hero-text p { font-size: 0.94rem; }
+    .hero-image { height: 360px; margin: 0 1rem; }
+    .hero-badge { min-width: unset; right: 1rem; }
+    .about-credentials { grid-template-columns: 1fr; }
+    .service-group { padding: 1.35rem; }
+    .form-row, .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#hero" class="nav-logo" aria-label="Svastana Wellness Clinic home">
+    <img src="./assets/logo.png" alt="Svastana Wellness Clinic Logo" />
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/918333888010" target="_blank" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-tag">Naturopathic Wellness Clinic</p>
+    <h1>Healing Guided<br>by <em>Nature</em> &amp; Care</h1>
+    <p>Personalized naturopathic care and holistic diet planning crafted to restore your inner balance through the wisdom of natural healing.</p>
+    <div class="btn-group">
+      <a href="https://wa.me/918333888010" target="_blank" class="btn-primary">Book a Consultation</a>
+      <a href="#about" class="btn-outline">Our Approach</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="./assets/doctor-photo.jpeg" alt="Dr. G. Monica Sravanthi – Naturopathic Practitioner" />
+    <div class="hero-badge">
+      <p>Led by</p>
+      <strong>Dr. G. Monica Sravanthi</strong>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>Naturopathy</span><span>Holistic Nutrition</span><span>Acupuncture</span><span>Yoga Therapy</span><span>Hydrotherapy</span><span>Diet Therapy</span><span>Mud Therapy</span><span>Physiotherapy</span><span>Natural Healing</span><span>Personalised Care</span><span>Naturopathy</span><span>Holistic Nutrition</span><span>Acupuncture</span><span>Yoga Therapy</span><span>Hydrotherapy</span><span>Diet Therapy</span><span>Mud Therapy</span><span>Physiotherapy</span><span>Natural Healing</span><span>Personalised Care</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap fade-up">
+        <div class="about-image-box">
+          <img src="./assets/doctor-photo.jpeg" alt="Dr. G. Monica Sravanthi" />
+        </div>
+        <div class="about-accent"></div>
+      </div>
+      <div class="about-text fade-up">
+        <p class="section-tag">About Dr. Monica</p>
+        <h2 class="section-title">Guiding Your Journey to <em>Natural Vitality</em></h2>
+        <p>Dr. G. Monica Sravanthi is a dedicated practitioner of naturopathy and holistic nutrition, specializing in the art of personalized diet planning. At Svastana Wellness, she serves as a compassionate guide for those seeking to harmonize their health through the wisdom of natural healing.</p>
+        <p>Her expertise lies in identifying the root causes of imbalance and addressing them with artisanal care and evidence-based naturopathic protocols. With an unwavering commitment to organic minimalism in health, she believes the most profound healing occurs when the body is provided with the pure essentials of nature.</p>
+        <p>Dr. Monica's approach is marked by a deep-seated passion for empowering her clients to reclaim their well-being, focusing on the transformative power of holistic nutrition as the foundation of a vibrant, balanced life.</p>
+        <div class="about-credentials">
+          <div class="credential"><strong>1000+</strong><span>Clients Served</span></div>
+          <div class="credential"><strong>5+</strong><span>Years Practice</span></div>
+          <div class="credential"><strong>BNYS</strong><span>Certified</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="services-header fade-up">
+      <p class="section-tag">What We Offer</p>
+      <h2 class="section-title">Therapies &amp; <em>Services</em></h2>
+      <p style="color:var(--muted);font-size:0.92rem;line-height:1.85;margin-top:0.8rem;">Each treatment is thoughtfully tailored to your unique constitution and health goals, rooted in evidence-based naturopathic protocols.</p>
+    </div>
+    <div class="two-col-services">
+      <div class="service-group fade-up">
+        <h3>Therapies</h3>
+        <ul class="service-list">
+          <li>Hydrotherapy</li>
+          <li>Manipulative Therapy</li>
+          <li>Acupuncture</li>
+          <li>Electrotherapy</li>
+          <li>Fasting Therapy</li>
+          <li>Diet Therapy</li>
+          <li>Yoga Therapy</li>
+          <li>Physiotherapy</li>
+          <li>Mud Therapy</li>
+          <li>Chromo Therapy</li>
+          <li>Magneto Therapy</li>
+        </ul>
+      </div>
+      <div class="service-group fade-up">
+        <h3>Services Provided</h3>
+        <ul class="service-list">
+          <li>Therapeutic Acupuncture</li>
+          <li>Cosmetic Acupuncture</li>
+          <li>Acupressure</li>
+          <li>Hand and Foot Reflexology</li>
+          <li>Therapeutic Yoga</li>
+          <li>Hot Foot Immersion</li>
+          <li>Spinal Bath</li>
+          <li>Sitz Bath</li>
+          <li>Douche</li>
+          <li>Full Body Mud Therapy</li>
+          <li>Full Body Massage</li>
+          <li>Therapeutic Massage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy">
+  <div class="container">
+    <div class="philosophy-inner fade-up">
+      <p class="section-tag">Our Belief</p>
+      <h2 class="section-title">Nurturing Your Nature Through the<br><em>Wisdom of Naturopathy</em></h2>
+      <p>Unlock your body's innate healing potential with personalized guidance and science-backed naturopathic care for a more balanced life. We believe that the most profound healing occurs when the body is provided with the pure essentials of nature.</p>
+      <p>Every protocol we design is rooted in the principle that true wellness comes from addressing the whole person — body, mind, and environment — not just managing individual symptoms.</p>
+      <a href="https://wa.me/918333888010" target="_blank" class="btn-primary">Begin Your Journey</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <p class="section-tag">Get in Touch</p>
+        <h2 class="section-title">Begin Your <em>Journey</em></h2>
+        <p>Start a conversation today for personalized guidance on your path to natural healing and wellness. Dr. Monica is here to support you every step of the way.</p>
+      </div>
+      <div class="contact-form-wrap fade-up">
+        <h3>Book Your Consultation</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="Your email"></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us how we can support your wellness journey"></textarea></div>
+        <a href="https://wa.me/918333888010" target="_blank" class="wa-btn">Book via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-wrap">
+          <div>
+            <div class="footer-logo-name">Svastana Wellness</div>
+            <div class="footer-logo-sub">Wellness Clinic</div>
+          </div>
+        </div>
+        <p class="footer-tagline">Expert naturopathic care by Dr. G. Monica Sravanthi. Healing through nature, personalised for you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About Dr. Monica</a></li>
+          <li><a href="#services">Therapies</a></li>
+          <li><a href="#services">Services Provided</a></li>
+          <li><a href="#philosophy">Our Philosophy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Therapies</h4>
+        <ul>
+          <li><a href="#services">Acupuncture</a></li>
+          <li><a href="#services">Hydrotherapy</a></li>
+          <li><a href="#services">Yoga Therapy</a></li>
+          <li><a href="#services">Mud Therapy</a></li>
+          <li><a href="#services">Diet Therapy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Svastana Wellness Clinic. All rights reserved. Expert Naturopathic Care by Dr. G. Monica Sravanthi.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/svastana_wellness" target="_blank" title="Instagram">IG</a>
+        <a href="https://wa.me/918333888010" target="_blank" title="WhatsApp">WA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
