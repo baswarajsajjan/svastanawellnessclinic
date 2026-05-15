@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="theme-color" content="#6b5b95">
+<title>Svastana Wellness — Heal Naturally, Live Fully</title>
+<meta name="description" content="Expert holistic naturopathy by Dr. G. Monica Sravanthi BNYS MBA MD Acupuncture. Acupuncture, Yoga, Hydrotherapy & more. Book now.">
+
+<!-- PRELOAD critical font -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+<style>
+/* ── PERFORMANCE: critical CSS inline ── */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* LIGHT PURPLE THEME */
+  --G:#6b5b95;--GM:#8877a9;--GL:#a896c5;--GE:#c9b8e0;--GF:#e8e0f5;--GP:#f8f6fc;
+  --CR:#fcfbfd;--WH:#fff;--GO:#b8a9d9;--GA:#c9a8d4;--GB:#d4b8e8;
+  --DK:#3a2a5a;--TX:#4a3a6a;--MT:#7a6a9a;--BD:rgba(136,119,169,.15);
+  --SH:0 6px 30px rgba(58,42,90,.1);--SX:0 20px 60px rgba(58,42,90,.18);
+  --R:12px;--RL:20px;
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--GP);color:var(--TX);overflow-x:hidden;line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block;height:auto}
+::selection{background:var(--GF);color:var(--DK)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--GL);border-radius:3px}
+body{font-family:system-ui,-apple-system,sans-serif}
+body.fonts-loaded{font-family:'Jost',system-ui,sans-serif}
+
+/* ─── SKIP LINK ─── */
+.skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--G);color:#fff;padding:.5rem 1rem;border-radius:0 0 var(--R) 0}
+.skip:focus{left:0}
+
+/* ─── TOAST ─── */
+#toastWrap{position:fixed;bottom:1.5rem;right:1.5rem;z-index:8888;display:flex;flex-direction:column;gap:.6rem;pointer-events:none}
+.toast{padding:.8rem 1.3rem;border-radius:var(--R);font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:.6rem;animation:tIn .3s ease;box-shadow:var(--SX);pointer-events:auto;max-width:300px}
+.tok{background:var(--G);color:#fff}.terr{background:#b91c1c;color:#fff}
+@keyframes tIn{from{transform:translateX(110%);opacity:0}to{transform:none;opacity:1}}
+
+/* ─── TOP BAR ─── */
+.topbar{background:var(--DK);color:rgba(255,255,255,.72);font-size:.76rem;padding:.4rem 0;letter-spacing:.3px}
+.topbar .w{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem}
+.topbar a{color:rgba(255,255,255,.65);display:inline-flex;align-items:center;gap:.35rem;transition:color .2s}
+.topbar a:hover{color:var(--GB)}
+.tb-left,.tb-right{display:flex;gap:1.2rem;align-items:center}
+.tb-wa{color:#e8c0f0!important}
+@media(max-width:600px){.topbar{display:none}}
+
+/* ─── HEADER ─── */
+header{position:sticky;top:0;z-index:500;transition:background .3s,box-shadow .3s,padding .3s}
+header.solid{background:rgba(252,251,253,.97);backdrop-filter:blur(14px);box-shadow:0 2px 24px rgba(58,42,90,.09)}
+header.glass{background:rgba(58,42,90,.15);backdrop-filter:blur(12px)}
+.nav-in{max-width:1180px;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+
+.nlogo{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.nlogo-box{width:44px;height:44px;border-radius:12px;overflow:hidden;background:var(--GM);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(136,119,169,.3);transition:transform .3s;flex-shrink:0}
+.nlogo-box:hover{transform:rotate(-7deg) scale(1.1)}
+#logoImg{width:100%;height:100%;object-fit:cover;display:none}
+#logoImg[src]:not([src=""]){display:block}
+.nlogo-svg{width:24px;height:24px}
+.nbrand-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--DK);line-height:1.1;transition:color .3s}
+.nbrand-sub{font-size:.65rem;color:var(--MT);letter-spacing:1px;text-transform:uppercase;font-weight:300;transition:color .3s}
+header.glass .nbrand-name{color:#fff}
+header.glass .nbrand-sub{color:rgba(255,255,255,.6)}
+
+nav{display:flex;align-items:center;gap:.15rem}
+nav a{font-size:.8rem;font-weight:400;color:var(--TX);padding:.4rem .8rem;border-radius:8px;transition:all .2s;white-space:nowrap}
+header.glass nav a{color:rgba(255,255,255,.85)}
+nav a:hover,nav a.on{color:var(--GM);background:var(--GP)}
+header.glass nav a:hover,header.glass nav a.on{color:var(--GB);background:rgba(255,255,255,.1)}
+.nav-book{background:var(--GM);color:#fff!important;border-radius:22px;padding:.45rem 1.2rem!important;font-weight:500!important;box-shadow:0 4px 14px rgba(136,119,169,.25);transition:all .3s!important}
+.nav-book:hover{background:var(--G)!important;transform:translateY(-2px);box-shadow:0 8px 20px rgba(136,119,169,.3)!important}
+header.glass .nav-book{background:rgba(255,255,255,.15)!important;border:1px solid rgba(255,255,255,.3)!important}
+
+.burger{display:none;flex-direction:column;gap:4.5px;cursor:pointer;padding:.4rem;background:none;border:none}
+.burger span{width:21px;height:2px;background:var(--TX);border-radius:2px;transition:all .3s;display:block}
+header.glass .burger span{background:#fff}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+.drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--DK);z-index:600;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:5rem 1.5rem 2rem;gap:.2rem;box-shadow:-20px 0 60px rgba(0,0,0,.4);overflow-y:auto}
+.drawer.open{transform:none}
+.drawer-close{position:absolute;top:1.1rem;right:1.2rem;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:1.2rem;width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.drawer a{font-size:1rem;color:rgba(255,255,255,.82);padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:.8rem;transition:color .2s;border-radius:8px}
+.drawer a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.drawer-overlay{position:fixed;inset:0;z-index:599;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-overlay.on{opacity:1;pointer-events:auto}
+@media(max-width:900px){nav a:not(.nav-book){display:none}.burger{display:flex}}
+
+/* ─── HERO ─── */
+#hero{position:relative;height:100svh;min-height:580px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg, var(--GP) 0%, var(--GF) 50%, var(--GE) 100%)}
+.hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(58,42,90,.15) 0%,rgba(58,42,90,.08) 52%,rgba(58,42,90,.02) 100%),linear-gradient(to top,rgba(58,42,90,.1) 0%,transparent 45%)}
+.hero-ray{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 55% 65% at 64% 42%,rgba(212,168,212,.12) 0%,transparent 65%);animation:ray 9s ease-in-out infinite alternate}
+@keyframes ray{from{opacity:.4}to{opacity:1}}
+.hero-particles{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.hp{position:absolute;border-radius:50%;background:rgba(201,184,224,.25);animation:hpFloat linear infinite}
+@keyframes hpFloat{0%{transform:translateY(0) rotate(0deg);opacity:.25}100%{transform:translateY(-110vh) rotate(720deg);opacity:0}}
+.hero-inner{position:relative;z-index:10;max-width:1180px;margin:0 auto;width:100%;padding:0 1.5rem}
+.hero-content{max-width:660px;animation:hcIn 1.3s cubic-bezier(.16,1,.3,1) both}
+@keyframes hcIn{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
+.h-chip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(107,91,149,.08);backdrop-filter:blur(8px);border:1px solid rgba(107,91,149,.18);color:var(--DK);padding:.38rem .95rem;border-radius:30px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.4rem;animation:fu .7s .25s both}
+.h-dot{width:7px;height:7px;border-radius:50%;background:var(--GB);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.h-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:300;line-height:1.05;color:var(--DK);margin-bottom:1.3rem;animation:fu .7s .4s both}
+.h-title em{font-style:italic;color:var(--GM)}.h-title strong{font-weight:700;display:block}
+.h-sub{font-size:clamp(.9rem,2vw,1.05rem);font-weight:300;color:var(--MT);line-height:1.85;max-width:500px;margin-bottom:2.2rem;animation:fu .7s .55s both}
+.h-btns{display:flex;gap:.8rem;flex-wrap:wrap;animation:fu .7s .7s both}
+.hb{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;border-radius:50px;font-size:.82rem;font-weight:500;letter-spacing:.6px;cursor:pointer;transition:transform .3s,box-shadow .3s;border:none;font-family:inherit}
+.hb:active{transform:scale(.97)}
+.hb-gold{background:linear-gradient(135deg,var(--GA),var(--GO));color:var(--DK);box-shadow:0 10px 35px rgba(184,169,217,.35)}
+.hb-gold:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 18px 45px rgba(184,169,217,.45)}
+.hb-wa{background:#9c69b8;color:#fff;box-shadow:0 8px 28px rgba(156,105,184,.28)}
+.hb-wa:hover{transform:translateY(-4px);background:#8a55a8;box-shadow:0 16px 38px rgba(156,105,184,.38)}
+.hb-ghost{background:rgba(107,91,149,.08);color:var(--DK);border:1.5px solid rgba(107,91,149,.25);backdrop-filter:blur(6px)}
+.hb-ghost:hover{background:rgba(107,91,149,.15);transform:translateY(-4px)}
+.h-stats{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.5rem;animation:fu .7s .85s both}
+.h-stat{display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border:1px solid var(--BD);padding:.5rem 1rem;border-radius:30px;color:var(--DK)}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--GM)}.h-stat-l{font-size:.7rem;opacity:.8;white-space:nowrap}
+.hero-card{position:absolute;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border:1px solid var(--BD);border-radius:var(--R);padding:.8rem 1.1rem;color:var(--DK);box-shadow:var(--SH)}
+.hero-card.hc1{bottom:20%;right:5%;animation:hcardF 5s ease-in-out infinite}
+.hero-card.hc2{top:30%;right:4%;animation:hcardF 6s 1s ease-in-out infinite}
+@keyframes hcardF{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.hc-l{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--MT);margin-bottom:.2rem}
+.hc-v{font-size:.95rem;font-weight:500;font-family:'Cormorant Garamond',serif}
+@media(max-width:768px){.hero-card{display:none}}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.35rem;color:var(--MT);font-size:.62rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;animation:scrollB 2.5s ease-in-out infinite}
+@keyframes scrollB{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+.scroll-bar{width:1px;height:42px;background:linear-gradient(180deg,var(--MT),transparent)}
+
+/* ─── TRUST STRIP ─── */
+.tstrip{background:var(--GF);border-top:1px solid var(--BD);border-bottom:1px solid var(--BD);padding:1.1rem 0}
+.tstrip-in{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:.8rem}
+.ti{display:flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:400;color:var(--GM)}
+.ti svg{width:15px;height:15px;flex-shrink:0;stroke:var(--GL);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* ─── SECTION COMMONS ─── */
+.w{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+section{padding:5.5rem 0;position:relative}
+.ey{font-size:.68rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--GL);margin-bottom:.7rem}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:var(--DK);line-height:1.1;margin-bottom:.9rem}
+.sd{font-size:.93rem;font-weight:300;color:var(--MT);line-height:1.85;max-width:530px}
+.dv{width:50px;height:1.5px;background:linear-gradient(90deg,var(--GM),var(--GE));border-radius:2px;margin:.7rem 0 1.5rem}
+.dv.c{margin:.7rem auto 1.5rem}
+.ctr{text-align:center}.ctr .sd{margin:0 auto}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.9rem;border-radius:50px;font-size:.83rem;font-weight:500;letter-spacing:.4px;cursor:pointer;transition:transform .3s,box-shadow .3s;border:none;font-family:inherit}
+.btn:active{transform:scale(.97)!important}
+.btn-g{background:var(--GM);color:#fff;box-shadow:0 6px 22px rgba(136,119,169,.22)}
+.btn-g:hover{background:var(--G);transform:translateY(-3px);box-shadow:0 12px 30px rgba(136,119,169,.3)}
+.btn-wa{background:#9c69b8;color:#fff;box-shadow:0 6px 22px rgba(156,105,184,.22)}
+.btn-wa:hover{background:#8a55a8;transform:translateY(-3px)}
+.btn-ol{background:transparent;color:var(--GM);border:1.5px solid var(--GM)}
+.btn-ol:hover{background:var(--GM);color:#fff;transform:translateY(-3px)}
+svg.ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+/* ─── ABOUT ─── */
+#about{background:var(--WH)}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.aphoto-wrap{position:relative}
+.aphoto-frame{width:100%;aspect-ratio:.75;border-radius:4px 46px 4px 46px;overflow:hidden;background:linear-gradient(135deg,var(--GF),#d4c5e8);box-shadow:var(--SX);position:relative;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.aphoto-frame:hover{transform:translateY(-10px) rotateY(-3deg)}
+#docPhoto{width:100%;height:100%;object-fit:cover;object-position:top center;display:none}
+#docPhoto[src]:not([src=""]){display:block}
+.doc-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;background:linear-gradient(135deg,#e8e0f5,#d4c5e8)}
+.doc-ph svg{opacity:.28;width:75px;height:75px;stroke:var(--GM)}
+.doc-ph p{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--G);opacity:.5}
+.doc-ph small{font-size:.6rem;opacity:.35;text-align:center;padding:0 1.2rem}
+.pbadge{position:absolute;background:var(--WH);border-radius:var(--R);padding:.9rem 1.2rem;box-shadow:var(--SX);border:1px solid var(--BD)}
+.pbadge.pbl{left:-14%;bottom:25%;animation:pb 6s ease-in-out infinite}
+.pbadge.pbr{right:-12%;top:20%;animation:pb 8s 1s ease-in-out infinite}
+@keyframes pb{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.pb-n{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:600;color:var(--G);line-height:1}
+.pb-l{font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--MT)}
+@media(max-width:900px){.pbadge{display:none}}
+.aname{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400;line-height:1.1;color:var(--DK);margin-bottom:.45rem}
+.acreds{font-size:.75rem;letter-spacing:2px;color:var(--GO);text-transform:uppercase;margin-bottom:1.6rem}
+.abio{font-size:.93rem;font-weight:300;line-height:1.9;color:var(--MT);margin-bottom:1.8rem}
+.atags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+.atag{display:flex;align-items:center;gap:.4rem;padding:.35rem .85rem;background:var(--GP);color:var(--GM);border-radius:20px;font-size:.76rem;border:1px solid var(--BD)}
+.edu-list{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.8rem}
+.edu-row{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1rem;background:var(--CR);border-radius:var(--R);border-left:3px solid var(--GL)}
+.edu-ico{width:34px;height:34px;border-radius:9px;background:var(--GP);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edu-ico svg{width:17px;height:17px;stroke:var(--GM);fill:none;stroke-width:1.8;stroke-linecap:round}
+.edu-h{font-size:.87rem;font-weight:500;color:var(--DK)}
+.edu-p{font-size:.77rem;color:var(--MT);margin-top:.1rem}
+.a-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+@media(max-width:900px){.about-g{grid-template-columns:1fr;gap:2.5rem}.aphoto-wrap{max-width:340px;margin:0 auto}}
+
+/* ─── SERVICES ─── */
+#services{background:var(--CR)}
+.tab-bar{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.tp{padding:.5rem 1.4rem;border-radius:30px;border:1.5px solid var(--BD);background:var(--WH);color:var(--MT);font-size:.8rem;cursor:pointer;transition:all .22s;font-family:inherit}
+.tp.on,.tp:hover{background:var(--GM);color:#fff;border-color:var(--GM);box-shadow:0 5px 18px rgba(136,119,169,.18)}
+.tpanel{display:none}.tpanel.on{display:grid}
+.tg{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1.2rem}
+.sg{grid-template-columns:repeat(3,1fr);gap:1px;background:var(--BD);border-radius:var(--RL);overflow:hidden;border:1px solid var(--BD)}
+@media(max-width:700px){.sg{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.sg{grid-template-columns:1fr}}
+.tc{background:var(--WH);border-radius:var(--RL);padding:1.6rem 1.4rem;border:1px solid var(--BD);transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;cursor:default;position:relative;overflow:hidden;contain:layout}
+.tc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--G),var(--GE),var(--GO));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.tc:hover{transform:translateY(-12px);box-shadow:var(--SX)}.tc:hover::after{transform:scaleX(1)}
+.tc-ico{width:50px;height:50px;border-radius:14px;background:var(--GP);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:all .3s;border:1px solid var(--BD)}
+.tc-ico svg{width:25px;height:25px;stroke:var(--GM);fill:none;stroke-width:1.5;stroke-linecap:round;transition:stroke .3s}
+.tc:hover .tc-ico{background:var(--GM);transform:scale(1.08) rotate(-5deg);border-color:transparent}
+.tc:hover .tc-ico svg{stroke:#fff}
+.tc-n{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--DK);margin-bottom:.35rem}
+.tc-d{font-size:.8rem;font-weight:300;color:var(--MT);line-height:1.65}
+.sr{background:var(--WH);padding:1.1rem 1.5rem;display:flex;align-items:center;gap:.9rem;transition:all .22s;cursor:default;position:relative;overflow:hidden}
+.sr::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:linear-gradient(var(--G),var(--GE));transform:scaleY(0);transform-origin:bottom;transition:transform .25s}
+.sr:hover{background:rgba(201,184,224,.18);transform:translateX(4px)}.sr:hover::before{transform:scaleY(1)}
+.sr-ico{width:38px;height:38px;border-radius:10px;background:var(--GP);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--BD)}
+.sr-ico svg{width:18px;height:18px;stroke:var(--GM);fill:none;stroke-width:1.6;stroke-linecap:round}
+.sr-n{font-size:.86rem;font-weight:400;color:var(--DK)}
+
+/* ─── STATS ─── */
+#stats{background:linear-gradient(135deg,var(--DK) 0%,var(--G) 60%,#4a3a6a 100%);padding:4.5rem 0;position:relative;overflow:hidden}
+#stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(168,150,197,.12) 0%,transparent 70%)}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:2;text-align:center}
+@media(max-width:700px){.stats-g{grid-template-columns:repeat(2,1fr);gap:1.2rem}}
+.si{color:#fff}.si-ic{font-size:1.6rem;margin-bottom:.5rem;opacity:.55}
+.si-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;line-height:1;color:var(--GB);display:flex;align-items:baseline;justify-content:center;gap:.05rem}
+.si-s{font-size:1.7rem;font-weight:400}.si-l{font-size:.78rem;color:rgba(255,255,255,.62);margin-top:.4rem}
+
+/* ─── BOOKING ─── */
+#book{background:var(--WH)}
+.book-g{display:grid;grid-template-columns:1fr 1.4fr;gap:4.5rem;align-items:start}
+@media(max-width:900px){.book-g{grid-template-columns:1fr;gap:2.5rem}}
+.book-sticky{position:sticky;top:100px}
+@media(max-width:900px){.book-sticky{position:static}}
+.perks{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
+.perk{display:flex;align-items:flex-start;gap:.85rem;padding:.95rem 1rem;background:var(--GP);border-radius:var(--R);border:1px solid var(--BD)}
+.perk-ic{width:36px;height:36px;border-radius:9px;background:var(--GF);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.perk-ic svg{width:17px;height:17px;stroke:var(--GM);fill:none;stroke-width:2;stroke-linecap:round}
+.perk h4{font-size:.86rem;font-weight:500;color:var(--DK)}.perk p{font-size:.76rem;color:var(--MT);margin-top:.1rem}
+.fcard{background:var(--CR);border-radius:var(--RL);padding:2.2rem;border:1px solid var(--BD);box-shadow:var(--SH)}
+.fcard h3{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--DK);margin-bottom:.25rem}
+.fcard>p{font-size:.81rem;color:var(--MT);margin-bottom:1.8rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media(max-width:500px){.f2{grid-template-columns:1fr}}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.76rem;font-weight:500;color:var(--TX);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.68rem .95rem;border:1.5px solid var(--BD);border-radius:var(--R);font-size:.87rem;color:var(--TX);background:var(--WH);transition:border-color .2s,box-shadow .2s;font-family:inherit;appearance:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--GL);box-shadow:0 0 0 3px rgba(168,150,197,.1)}
+.fg textarea{resize:vertical;min-height:85px}
+.sbtn{width:100%;padding:.9rem;font-size:.9rem;font-weight:500;background:linear-gradient(135deg,var(--GM),var(--G));color:#fff;border:none;border-radius:50px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;font-family:inherit;letter-spacing:.4px;transition:transform .3s,box-shadow .3s;box-shadow:0 8px 24px rgba(136,119,169,.22)}
+.sbtn:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(136,119,169,.3)}
+.sbtn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
+.sbtn svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round}
+.wa-alt{width:100%;padding:.75rem;font-size:.83rem;background:#9c69b8;color:#fff;border:none;border-radius:50px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;margin-top:.65rem;font-family:inherit;transition:all .3s}
+.wa-alt:hover{background:#8a55a8;transform:translateY(-2px)}.wa-alt svg{width:17px;height:17px;fill:#fff}
+
+/* ─── TESTIMONIALS ─── */
+#testimonials{background:var(--GP)}
+.feed-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
+.feed-count{font-size:.8rem;color:var(--MT);background:var(--WH);padding:.35rem .9rem;border-radius:20px;border:1px solid var(--BD)}
+.feed-sort{display:flex;gap:.4rem}
+.fsort-btn{padding:.35rem .9rem;border-radius:20px;border:1.5px solid var(--BD);background:var(--WH);color:var(--MT);font-size:.75rem;cursor:pointer;transition:all .2s;font-family:inherit}
+.fsort-btn.on{background:var(--GM);color:#fff;border-color:var(--GM)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-bottom:2.5rem}
+.rcard{background:var(--WH);border-radius:var(--RL);padding:1.6rem;border:1px solid var(--BD);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;gap:.9rem;animation:cardIn .4s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.rcard:hover{transform:translateY(-5px);box-shadow:var(--SX)}
+.rc-stars{color:#b894d4;letter-spacing:1.5px;font-size:.9rem}
+.rc-q{font-size:.88rem;font-weight:300;color:var(--TX);line-height:1.8;font-style:italic;flex:1}
+.rc-author{display:flex;align-items:center;gap:.75rem}
+.rc-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--GM),var(--GL));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;font-weight:600;font-family:'Cormorant Garamond',serif;flex-shrink:0}
+.rc-name{font-size:.86rem;font-weight:500;color:var(--DK)}.rc-meta{font-size:.73rem;color:var(--MT)}
+.rc-svc{display:inline-block;margin-top:.2rem;padding:.12rem .6rem;background:var(--GP);color:var(--GM);border-radius:12px;font-size:.68rem;border:1px solid var(--BD)}
+.rc-date{font-size:.68rem;color:var(--MT);opacity:.65}
+.rc-new{display:inline-block;padding:.1rem .5rem;background:#f0e6ff;color:#7a5a9a;border-radius:8px;font-size:.64rem;font-weight:600;margin-left:.4rem}
+.load-more{display:flex;justify-content:center;margin:1.5rem 0}
+.lm-btn{padding:.6rem 2rem;border-radius:30px;border:1.5px solid var(--BD);background:var(--WH);color:var(--GM);font-size:.82rem;cursor:pointer;transition:all .25s;font-family:inherit}
+.lm-btn:hover{background:var(--GM);color:#fff;border-color:var(--GM)}.lm-btn:disabled{opacity:.5;cursor:not-allowed}
+.rev-card{background:var(--WH);border-radius:var(--RL);padding:2rem;border:1px solid var(--BD);box-shadow:var(--SH);max-width:600px;margin:0 auto}
+.rev-card h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--DK);margin-bottom:.2rem}
+.rev-card>p{font-size:.8rem;color:var(--MT);margin-bottom:1.4rem}
+.star-row{display:flex;gap:.25rem;margin-bottom:.35rem}
+.sb{background:none;border:none;font-size:1.55rem;cursor:pointer;color:#d1d5db;transition:color .12s,transform .15s;padding:.05rem}
+.sb.on{color:#b894d4}.sb:hover{transform:scale(1.2);color:#b894d4}
+.empty-st{text-align:center;padding:2.5rem;color:var(--MT);font-size:.9rem}
+.empty-st svg{width:48px;height:48px;stroke:var(--GE);fill:none;stroke-width:1.2;stroke-linecap:round;margin:0 auto 1rem}
+
+/* ─── RESEARCH ─── */
+#research{background:var(--DK);padding:5.5rem 0;position:relative;overflow:hidden}
+#research::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 15% 50%,rgba(168,150,197,.22) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 85% 30%,rgba(120,100,160,.15) 0%,transparent 60%)}
+.res-g{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;position:relative;z-index:2}
+@media(max-width:700px){.res-g{grid-template-columns:1fr}}
+.rc2{padding:2.2rem;border:1px solid rgba(255,255,255,.09);border-radius:var(--RL);background:rgba(255,255,255,.04);transition:all .35s;position:relative;overflow:hidden}
+.rc2::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--GO),transparent)}
+.rc2:hover{background:rgba(255,255,255,.07);transform:translateY(-6px);border-color:rgba(255,255,255,.15)}
+.rc2-tag{font-size:.63rem;letter-spacing:3px;text-transform:uppercase;color:var(--GB);margin-bottom:1rem}
+.rc2-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#fff;line-height:1.2;margin-bottom:.9rem}
+.rc2-body{font-size:.86rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.6)}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--WH)}
+.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+@media(max-width:900px){.cont-g{grid-template-columns:1fr;gap:2.5rem}}
+.cont-tl{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;line-height:1.1;color:var(--DK);margin-bottom:1.3rem}
+.cont-tl em{font-style:italic;color:var(--GM)}
+.cont-bd{font-size:.9rem;font-weight:300;color:var(--MT);line-height:1.85;margin-bottom:1.8rem}
+.clinks{display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem}
+.clink{display:flex;align-items:center;gap:1.1rem;padding:1rem 1.3rem;background:var(--GP);border-radius:var(--R);border:1px solid var(--BD);text-decoration:none;color:var(--TX);transition:all .25s}
+.clink:hover{transform:translateX(5px);border-color:var(--GL);box-shadow:var(--SH)}
+.clink-ic{width:42px;height:42px;border-radius:11px;background:var(--GF);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.clink-ic svg{width:21px;height:21px}
+.cl-lbl{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--MT);margin-bottom:.15rem}
+.cl-val{font-size:.88rem;font-weight:500;color:var(--DK)}
+.orbit{position:relative;width:320px;height:320px;margin:0 auto}
+.o-ctr{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,var(--GF) 0%,rgba(201,184,224,.2) 70%,transparent 90%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;padding:1.5rem;animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.04)}}
+.o-leaf{font-size:2.2rem;animation:spinL 20s linear infinite}@keyframes spinL{to{transform:rotate(360deg)}}
+.o-name{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:400;color:var(--DK);line-height:1.3}
+.o-sub{font-size:.56rem;letter-spacing:2px;text-transform:uppercase;color:var(--MT)}
+.o-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px dashed var(--BD);transform:translate(-50%,-50%)}
+.o-ring.r1{width:240px;height:240px;animation:spinR 28s linear infinite}
+.o-ring.r2{width:310px;height:310px;animation:spinR 40s linear infinite reverse}
+@keyframes spinR{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.o-dot{position:absolute;top:0;left:50%;margin-left:-5px;width:10px;height:10px;border-radius:50%;transform:translateY(-50%)}
+.od1{background:var(--GM)}.od2{background:var(--GO)}
+@media(max-width:900px){.orbit{display:none}}
+
+/* ─── FOOTER ─── */
+footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
+.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+@media(max-width:900px){.foot-g{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.foot-g{grid-template-columns:1fr}}
+.fbrand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:.7rem}
+.ftag{font-size:.82rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.45);max-width:260px;margin-bottom:1.3rem}
+.fsoc{display:flex;gap:.55rem}
+.fsoc a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:all .2s}
+.fsoc a:hover{background:var(--GM);color:#fff;transform:translateY(-2px)}
+.fsoc a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.fcol h5{font-size:.67rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.38);margin-bottom:1.1rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.fcol ul li a,.fcol ul li{font-size:.82rem;color:rgba(255,255,255,.58);transition:color .2s;cursor:pointer}
+.fcol ul li a:hover,.fcol ul li:hover{color:#fff}
+.foot-bot{padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:rgba(255,255,255,.32);flex-wrap:wrap;gap:.6rem}
+
+/* FLOATING WA */
+.wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:52px;height:52px;border-radius:50%;background:#9c69b8;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(156,105,184,.38);z-index:400;transition:all .3s;-webkit-tap-highlight-color:transparent}
+.wa-fab:hover,.wa-fab:focus{transform:scale(1.12);box-shadow:0 12px 38px rgba(156,105,184,.48)}
+.wa-fab svg{width:25px;height:25px;fill:white}
+
+/* ── UTILITY ── */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- TOAST -->
+<div id="toastWrap" aria-live="polite"></div>
+
+<!-- TOP BAR -->
+<div class="topbar" role="complementary">
+  <div class="w">
+    <div class="tb-left">
+      <a href="tel:+918333888010" aria-label="Call us">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        8333888010
+      </a>
+      <a href="mailto:svastanawellness8@gmail.com" aria-label="Email us">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        svastanawellness8@gmail.com
+      </a>
+    </div>
+    <div class="tb-right">
+      <a href="https://wa.me/918333888010" target="_blank" rel="noopener" class="tb-wa" aria-label="WhatsApp">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr" class="glass" role="banner">
+  <div class="nav-in">
+    <a href="#hero" class="nlogo" aria-label="Svastana Wellness Home">
+      <div class="nlogo-box">
+        <!-- ╔═══════════════════════════════════════════════════╗
+             ║  LOGO IMAGE - EDITABLE PLACEHOLDER                ║
+             ║  Replace src="" with your logo path               ║
+             ║  Example: src="assets/logo.png"                   ║
+             ╚═══════════════════════════════════════════════════╝ -->
+        <img id="logoImg" src="" alt="Logo">
+        <svg id="logoSvg" class="nlogo-svg" viewBox="0 0 28 28" fill="none">
+          <path d="M14 3C14 3 6 11 6 19C6 23.42 9.58 27 14 27C18.42 27 22 23.42 22 19C22 11 14 3 14 3Z" fill="rgba(201,184,224,0.8)" stroke="rgba(201,184,224,0.3)" stroke-width="1"/>
+          <line x1="14" y1="5" x2="14" y2="26" stroke="rgba(107,91,149,0.55)" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M14 15C14 15 10 12.5 7.5 15" stroke="rgba(107,91,149,0.5)" stroke-width="1" stroke-linecap="round"/>
+          <path d="M14 20C14 20 18 17.5 20.5 20" stroke="rgba(107,91,149,0.5)" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nbrand-name">Svastana Wellness</div>
+        <div class="nbrand-sub">Holistic Naturopathy</div>
+      </div>
+    </a>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#about">Doctor</a>
+      <a href="#services">Therapies</a>
+      <a href="#book">Book</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+      <a href="#book" class="nav-book">Book Now</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="#about" class="drawer-link">👩‍⚕️ About Doctor</a>
+  <a href="#services" class="drawer-link">🌿 Therapies & Services</a>
+  <a href="#book" class="drawer-link">📅 Book Appointment</a>
+  <a href="#testimonials" class="drawer-link">⭐ Patient Reviews</a>
+  <a href="#research" class="drawer-link">🔬 Research</a>
+  <a href="#contact" class="drawer-link">📞 Contact</a>
+  <br>
+  <a href="https://wa.me/918333888010" target="_blank" rel="noopener" style="background:#9c69b8;border-radius:30px;justify-content:center;margin-top:.5rem;border:none;color:white">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+<div class="drawer-overlay" id="drawerOv"></div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-ov" aria-hidden="true"></div>
+  <div class="hero-ray" aria-hidden="true"></div>
+  <div class="hero-particles" id="hParticles" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="h-chip"><span class="h-dot" aria-hidden="true"></span>BNYS · MBA (HA) · MD Acupuncture</div>
+      <h1 class="h-title"><em>Heal Naturally,</em><strong>Live Fully</strong></h1>
+      <p class="h-sub">Expert holistic naturopathy care by Dr. G. Monica Sravanthi — evidence-based, non-toxic treatments tailored to your unique wellness journey.</p>
+      <div class="h-btns">
+        <a href="#book" class="hb hb-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a>
+        <a href="https://wa.me/918333888010" class="hb hb-wa" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#about" class="hb hb-ghost">Discover More</a>
+      </div>
+      <div class="h-stats" id="heroStats">
+        <div class="h-stat"><span class="h-stat-n">1200+</span><span class="h-stat-l">Patients</span></div>
+        <div class="h-stat"><span class="h-stat-n">6+</span><span class="h-stat-l">Yrs Experience</span></div>
+        <div class="h-stat"><span class="h-stat-n">11</span><span class="h-stat-l">Therapies</span></div>
+        <div class="h-stat"><span class="h-stat-n">96%</span><span class="h-stat-l">Success</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-card hc1"><div class="hc-l">Experience</div><div class="hc-v">6+ Years</div></div>
+  <div class="hero-card hc2"><div class="hc-l">Approach</div><div class="hc-v">100% Natural</div></div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="Scroll down">
+    <div class="scroll-bar"></div><span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="tstrip" role="complementary" aria-label="Trust indicators">
+  <div class="tstrip-in">
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Safe &amp; Natural</div>
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Personalised Care</div>
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Evidence-Based</div>
+    <div class="ti"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>1200+ Healed</div>
+    <div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Flexible Timings</div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="w">
+    <div class="about-g">
+      <div class="aphoto-wrap rv">
+        <div class="aphoto-frame">
+          <!-- ╔═════════════════════════════════════════════════════╗
+               ║  DOCTOR PHOTO - EDITABLE PLACEHOLDER                ║
+               ║  Replace src="" with photo path                     ║
+               ║  Example: src="assets/dr-monica.jpg"                ║
+               ╚═════════════════════════════════════════════════════╝ -->
+          <img id="docPhoto" src="" alt="Dr. G. Monica Sravanthi" loading="lazy"
+               onload="document.getElementById('docPh').style.display='none'"
+               onerror="this.style.display='none'">
+          <div class="doc-ph" id="docPh">
+            <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="28" r="18" stroke="#6b5b95" stroke-width="1.5" fill="rgba(201,184,224,0.3)"/><path d="M10 74C10 57 22 51 40 51C58 51 70 57 70 74" stroke="#6b5b95" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            <p>Dr. G. Monica Sravanthi</p>
+            <small>Set src="" in #docPhoto to add photo</small>
+          </div>
+        </div>
+        <div class="pbadge pbl"><div class="pb-n">6+</div><div class="pb-l">Years Experience</div></div>
+        <div class="pbadge pbr"><div class="pb-n">MD</div><div class="pb-l">Acupuncture</div></div>
+      </div>
+      <div class="rv d2">
+        <p class="ey">Meet Your Doctor</p>
+        <h2 class="st" id="about-heading">Dr. G. Monica<br>Sravanthi</h2>
+        <div class="dv"></div>
+        <p class="acreds">BNYS · MBA (HA) · MD (Acupuncture)</p>
+        <p class="abio">A dedicated naturopathic healthcare practitioner specialising in holistic treatments and personalised diet plans. Committed to empowering patients through natural, non-toxic healing methods that harmonise the body's innate intelligence.</p>
+        <div class="atags">
+          <span class="atag">🎓 BNYS</span>
+          <span class="atag">📋 MBA (HA)</span>
+          <span class="atag">⭐ MD Acupuncture</span>
+          <span class="atag">🌿 6+ Yrs Experience</span>
+        </div>
+        <div class="edu-list">
+          <div class="edu-row">
+            <div class="edu-ico"><svg viewBox="0 0 22 22"><path d="M3 9L11 5L19 9L11 13L3 9Z"/><path d="M19 9V15"/><path d="M7 11V17C7 17 9 19 11 19C13 19 15 17 15 17V11"/></svg></div>
+            <div><div class="edu-h">American Heritage University</div><div class="edu-p">South California, USA</div></div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-ico"><svg viewBox="0 0 22 22"><rect x="3" y="7" width="16" height="12" rx="2"/><path d="M7 7V5C7 4 8 3 11 3C14 3 15 4 15 5V7"/><path d="M11 12V15M8.5 12H13.5"/></svg></div>
+            <div><div class="edu-h">Rajiv Gandhi University of Health Sciences</div><div class="edu-p">RGUHS, Bangalore</div></div>
+          </div>
+        </div>
+        <div class="a-btns">
+          <a href="#book" class="btn btn-g">
+            <svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Consultation
+          </a>
+          <a href="https://wa.me/918333888010" class="btn btn-wa" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" aria-labelledby="svc-heading">
+  <div class="w">
+    <div class="ctr rv">
+      <p class="ey">What We Offer</p>
+      <h2 class="st" id="svc-heading">Therapies &amp; Services</h2>
+      <div class="dv c"></div>
+      <p class="sd">Comprehensive healing modalities rooted in nature's wisdom and evidence-based science</p>
+    </div>
+    <br><br>
+    <div class="tab-bar rv" role="tablist" aria-label="Service categories">
+      <button class="tp on" data-tab="therapies" role="tab" aria-selected="true" aria-controls="tab-therapies">Our Therapies</button>
+      <button class="tp" data-tab="services" role="tab" aria-selected="false" aria-controls="tab-services">Services Provided</button>
+    </div>
+
+    <div class="tpanel tg on" id="tab-therapies" role="tabpanel">
+      <div class="tc rv d1"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M14 3C14 3 7 11 7 17C7 20.9 10.1 24 14 24C17.9 24 21 20.9 21 17C21 11 14 3 14 3Z" fill="rgba(107,91,149,.1)"/><path d="M10 17C10 19.2 11.8 21 14 21"/><path d="M5 26H23M3 26C3 26 5 24 7 24C9 24 10 26 12 26C14 26 15 24 17 24C19 24 20 26 22 26" stroke-width="1"/></svg></div><div class="tc-n">Hydrotherapy</div><div class="tc-d">Water-based healing to detoxify, restore and revitalise natural flow</div></div>
+      <div class="tc rv d2"><div class="tc-ico"><svg viewBox="0 0 28 28"><ellipse cx="14" cy="13" rx="6" ry="9" fill="rgba(107,91,149,.1)"/><path d="M11 10C11.5 11 13 11.5 14 11.5C15 11.5 16.5 11 17 10M11 16C11.5 17 13 17.5 14 17.5C15 17.5 16.5 17 17 16"/><path d="M8 21L5 26M20 21L23 26"/></svg></div><div class="tc-n">Manipulative Therapy</div><div class="tc-d">Restores mobility, eases tension and relieves chronic pain</div></div>
+      <div class="tc rv d3"><div class="tc-ico"><svg viewBox="0 0 28 28"><line x1="14" y1="3" x2="14" y2="25" stroke-width="1.6"/><line x1="9" y1="6" x2="19" y2="6"/><circle cx="14" cy="14" r="3" fill="rgba(107,91,149,.2)"/><path d="M7 10L5 14L7 18M21 10L23 14L21 18" stroke-width="1.1"/></svg></div><div class="tc-n">Acupuncture</div><div class="tc-d">Ancient technique balancing vital energy and healing conditions</div></div>
+      <div class="tc rv d4"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M15 3L8 15H13.5L12 25L20 13H14.5Z" fill="rgba(184,169,217,.15)" stroke="var(--GO)" stroke-width="1.4"/><circle cx="5" cy="8" r="2.2" fill="rgba(107,91,149,.15)"/><circle cx="23" cy="20" r="2.2" fill="rgba(107,91,149,.15)"/></svg></div><div class="tc-n">Electrotherapy</div><div class="tc-d">Electrical modalities for pain management &amp; accelerated healing</div></div>
+      <div class="tc rv d1"><div class="tc-ico"><svg viewBox="0 0 28 28"><circle cx="14" cy="15" r="9" fill="rgba(107,91,149,.1)"/><path d="M14 6C14 6 14 3 17 2"/><path d="M10 12C10 12 11.5 11 14 11C16.5 11 18 12 18 12"/><path d="M11 17C11.5 19 12.5 20 14 20C15.5 20 16.5 19 17 17"/><circle cx="11" cy="14" r="1.3" fill="var(--GE)" stroke="none"/><circle cx="17" cy="14" r="1.3" fill="var(--GE)" stroke="none"/></svg></div><div class="tc-n">Fasting Therapy</div><div class="tc-d">Guided protocols to cleanse and rejuvenate your system naturally</div></div>
+      <div class="tc rv d2"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M8 22C8 22 6 20 6 14C6 10 8 8 8 8"/><path d="M8 8C8 8 12 6 14 3"/><path d="M20 9C20 9 22 12 22 17C22 20 20 22 20 22"/><path d="M8 15H20"/><ellipse cx="14" cy="22" rx="5" ry="2.3" fill="rgba(107,91,149,.18)"/><circle cx="14" cy="11" r="3.2" fill="rgba(184,169,217,.18)" stroke="var(--GO)" stroke-width="1.2"/></svg></div><div class="tc-n">Diet Therapy</div><div class="tc-d">Personalised nutritional guidance for your unique health profile</div></div>
+      <div class="tc rv d3"><div class="tc-ico"><svg viewBox="0 0 28 28"><circle cx="14" cy="5.5" r="2.5" fill="rgba(107,91,149,.18)"/><path d="M14 8V15M7 11.5C7 11.5 10 10.5 14 12.5C18 10.5 21 11.5 21 11.5"/><path d="M14 15L10 22M14 15L18 22"/><path d="M7 11.5L5 15.5M21 11.5L23 15.5" stroke-width="1.1"/></svg></div><div class="tc-n">Yoga Therapy</div><div class="tc-d">Therapeutic practices for flexibility, strength and inner balance</div></div>
+      <div class="tc rv d4"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M9.5 23L7.5 27M18.5 23L20.5 27"/><rect x="7" y="10" width="14" height="13" rx="3.5" fill="rgba(107,91,149,.12)"/><path d="M11 17H17M14 12.5V20.5"/><path d="M10 8C10 8 11.5 5 14 5C16.5 5 18 8 18 8" stroke-width="1.1"/></svg></div><div class="tc-n">Physiotherapy</div><div class="tc-d">Evidence-based rehabilitation and movement therapy for recovery</div></div>
+      <div class="tc rv d1"><div class="tc-ico"><svg viewBox="0 0 28 28"><ellipse cx="14" cy="21" rx="10" ry="4.5" fill="rgba(139,90,43,.14)" stroke="#8b6f47" stroke-width="1.3"/><path d="M8 21C8 21 9 14 14 10C19 14 20 21 20 21" fill="rgba(139,90,43,.07)" stroke="#8b6f47" stroke-width="1.3"/></svg></div><div class="tc-n">Mud Therapy</div><div class="tc-d">Earth-mineral treatments for deep detox and skin restoration</div></div>
+      <div class="tc rv d2"><div class="tc-ico"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none"/><path d="M14 4C14 4 20 9 20 14C20 19 14 24 14 24" fill="rgba(184,169,217,.15)"/><path d="M14 4C14 4 8 9 8 14C8 19 14 24 14 24" fill="rgba(107,91,149,.15)"/><circle cx="14" cy="14" r="3.5" fill="rgba(107,91,149,.3)"/></svg></div><div class="tc-n">Chromo Therapy</div><div class="tc-d">Colour-light frequencies for emotional balance and healing</div></div>
+      <div class="tc rv d3"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M8 5.5C8 5.5 6 5.5 6 11V16C6 19.5 8 21 8 21V16C8 16 10 15 10 12C10 9 8 5.5 8 5.5Z" fill="rgba(107,91,149,.12)"/><path d="M20 5.5C20 5.5 22 5.5 22 11V16C22 19.5 20 21 20 21V16C20 16 18 15 18 12C18 9 20 5.5 20 5.5Z" fill="rgba(184,169,217,.12)" stroke="var(--GO)" stroke-width="1.3"/><path d="M8 21H20" stroke-width="1.6"/><circle cx="14" cy="13" r="2.5" fill="rgba(107,91,149,.28)"/></svg></div><div class="tc-n">Magneto Therapy</div><div class="tc-d">Magnetic field treatments for circulation and cellular repair</div></div>
+    </div>
+
+    <div class="tpanel sg" id="tab-services" role="tabpanel">
+      <div class="sr rv"><div class="sr-ico"><svg viewBox="0 0 22 22"><line x1="11" y1="2" x2="11" y2="20" stroke-width="1.6"/><line x1="7" y1="5" x2="15" y2="5"/><circle cx="11" cy="11" r="2.2" fill="rgba(107,91,149,.25)" stroke-width="1.1"/></svg></div><span class="sr-n">Therapeutic Acupuncture</span></div>
+      <div class="sr rv d1"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M11 3C11 3 7 6.5 7 10C7 12.2 8.8 14 11 14C13.2 14 15 12.2 15 10C15 6.5 11 3 11 3Z" fill="rgba(184,169,217,.18)" stroke="var(--GO)" stroke-width="1.3"/><path d="M9 17H13M11 14V17"/></svg></div><span class="sr-n">Cosmetic Acupuncture</span></div>
+      <div class="sr rv d2"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M7 9C7 9 6 7 7 5C8 3 10 3 11 4M7 9L5 15C5 15 4 19 8 19.5H14C18 19 17 15 17 15L15 9" fill="rgba(107,91,149,.1)"/><path d="M11 4V9"/></svg></div><span class="sr-n">Acupressure</span></div>
+      <div class="sr rv"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M5 15C5 15 4 13 4 10C4 8 5 7 6 7C7 7 7 8 7 9M7 15C7 12 6 9 6 9C6 7 7 6 8 6C9 6 9 7 9 9M9 15C9 15 8 11 8 8C8 6 9 5 10 5C11 5 11 6 11 8V15M11 8C11 8 12 6 13 6C14 6 14 7 14 9V15M14 9C14 9 15 8 16 8C17 8 17 9 17 11V15"/><path d="M5 15C5 17 6.5 18.5 9 18.5H13C15.5 18.5 17 17 17 15"/></svg></div><span class="sr-n">Hand &amp; Foot Reflexology</span></div>
+      <div class="sr rv d1"><div class="sr-ico"><svg viewBox="0 0 22 22"><circle cx="11" cy="4.5" r="2" fill="rgba(107,91,149,.18)"/><path d="M11 6.5V12M6 9.5C6 9.5 8.5 9 11 10C13.5 9 16 9.5 16 9.5M11 12L8 18M11 12L14 18M6 9.5L4 13M16 9.5L18 13"/></svg></div><span class="sr-n">Therapeutic Yoga</span></div>
+      <div class="sr rv d2"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M4 14C4 14 4 18.5 11 18.5C18 18.5 18 14 18 14L17 10H5Z" fill="rgba(184,169,217,.16)" stroke="var(--GO)" stroke-width="1.3"/><path d="M8 10C8 10 8 7 9 6M11 10C11 10 11 7 12 6M14 10C14 10 14 8 15 7" stroke="var(--GO)" stroke-width="1"/></svg></div><span class="sr-n">Hot Foot Immersion</span></div>
+      <div class="sr rv"><div class="sr-ico"><svg viewBox="0 0 22 22"><rect x="3" y="13" width="16" height="6" rx="2.5" fill="rgba(107,91,149,.1)"/><path d="M7.5 13V8.5M11 13V6M14.5 13V8.5"/></svg></div><span class="sr-n">Spinal Bath</span></div>
+      <div class="sr rv d1"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M4 10H18M4 10C4 10 3 12 3 15C3 18 5 20 7.5 20H14.5C17 20 19 18 19 15C19 12 18 10 18 10" fill="rgba(107,91,149,.1)"/><path d="M8 10V7.5C8 6.4 8.9 5.5 10 5.5H12C13.1 5.5 14 6.4 14 7.5V10"/></svg></div><span class="sr-n">Sitz Bath</span></div>
+      <div class="sr rv d2"><div class="sr-ico"><svg viewBox="0 0 22 22"><path d="M5 4C5 4 6 6 8 7L14 8C16 8.5 17 10.5 17 10.5"/><path d="M17 10.5L19.5 12.5L18 14L15.5 12" fill="rgba(107,91,149,.12)"/><path d="M15.5 14C15.5 14 14 17 12.5 18.5M12.5 15C12.5 15 11.5 17.5 10.5 19"/></svg></div><span class="sr-n">Douche</span></div>
+      <div class="sr rv"><div class="sr-ico"><svg viewBox="0 0 22 22"><ellipse cx="11" cy="18" rx="8.5" ry="3" fill="rgba(139,90,43,.14)" stroke="#8b6f47" stroke-width="1.2"/><path d="M5 18C5 18 6 11 11 7.5C16 11 17 18 17 18" fill="rgba(139,90,43,.06)" stroke="#8b6f47" stroke-width="1.2"/></svg></div><span class="sr-n">Full Body Mud Therapy</span></div>
+      <div class="sr rv d1"><div class="sr-ico"><svg viewBox="0 0 22 22"><ellipse cx="11" cy="13" rx="5.5" ry="7" fill="rgba(107,91,149,.1)"/><path d="M8 11C9 10.5 10 10 11 10C12 10 13 10.5 14 11M8 15C9 14.5 10 14 11 14C12 14 13 14.5 14 15"/></svg></div><span class="sr-n">Full Body Massage</span></div>
+      <div class="sr rv d2"><div class="sr-ico"><svg viewBox="0 0 22 22"><rect x="4" y="9.5" width="14" height="6.5" rx="3.2" fill="rgba(107,91,149,.12)"/><path d="M5 16L4 19M17 16L18 19"/><path d="M7 5.5C7 5.5 9 5 11 5C13 5 15 5.5 15 5.5M7 7.5C7 7.5 9 7 11 7C13 7 15 7.5 15 7.5"/></svg></div><span class="sr-n">Therapeutic Massage</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section id="stats" aria-label="Statistics">
+  <div class="w">
+    <div class="stats-g">
+      <div class="si rv"><div class="si-ic">🌿</div><div class="si-n"><span class="ctr" data-n="1200">0</span><span class="si-s">+</span></div><div class="si-l">Patients Healed</div></div>
+      <div class="si rv d1"><div class="si-ic">⭐</div><div class="si-n"><span class="ctr" data-n="6">0</span><span class="si-s">+ Yrs</span></div><div class="si-l">Experience</div></div>
+      <div class="si rv d2"><div class="si-ic">🔬</div><div class="si-n"><span class="ctr" data-n="11">0</span></div><div class="si-l">Therapies</div></div>
+      <div class="si rv d3"><div class="si-ic">💚</div><div class="si-n"><span class="ctr" data-n="96">0</span><span class="si-s">%</span></div><div class="si-l">Success Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING ═══ -->
+<section id="book" aria-labelledby="book-heading">
+  <div class="w">
+    <div class="book-g">
+      <div class="book-sticky rv">
+        <p class="ey">Schedule a Visit</p>
+        <h2 class="st" id="book-heading">Book Your<br>Appointment</h2>
+        <div class="dv"></div>
+        <p class="sd">Take the first step towards holistic wellness. We confirm within 24 hours.</p>
+        <div class="perks">
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="9"/><polyline points="11 6 11 11 14 13"/></svg></div><div><h4>Flexible Timings</h4><p>Morning &amp; evening slots available</p></div></div>
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 22 22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>100% Natural</h4><p>Non-toxic evidence-based therapies</p></div></div>
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 22 22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><h4>Personalised Care</h4><p>Tailored treatment plans for you</p></div></div>
+          <div class="perk"><div class="perk-ic"><svg viewBox="0 0 22 22"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Quick Response</h4><p>We confirm within 2–4 hours</p></div></div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="fcard">
+          <h3>Book a Consultation</h3>
+          <p>Fill in your details and we'll get back to you shortly</p>
+          <form id="apptForm" novalidate>
+            <div class="f2">
+              <div class="fg"><label for="a-name">Full Name *</label><input id="a-name" type="text" placeholder="Your name" required autocomplete="name"></div>
+              <div class="fg"><label for="a-phone">Phone Number *</label><input id="a-phone" type="tel" placeholder="+91 XXXXX XXXXX" required autocomplete="tel"></div>
+            </div>
+            <div class="fg"><label for="a-email">Email Address</label><input id="a-email" type="email" placeholder="your@email.com" autocomplete="email"></div>
+            <div class="fg"><label for="a-svc">Select Service *</label>
+              <select id="a-svc" required>
+                <option value="">— Choose a service —</option>
+                <optgroup label="Therapies"><option>Hydrotherapy</option><option>Manipulative Therapy</option><option>Acupuncture</option><option>Electrotherapy</option><option>Fasting Therapy</option><option>Diet Therapy</option><option>Yoga Therapy</option><option>Physiotherapy</option><option>Mud Therapy</option><option>Chromo Therapy</option><option>Magneto Therapy</option></optgroup>
+                <optgroup label="Services"><option>Therapeutic Acupuncture</option><option>Cosmetic Acupuncture</option><option>Acupressure</option><option>Hand & Foot Reflexology</option><option>Therapeutic Yoga</option><option>Hot Foot Immersion</option><option>Spinal Bath</option><option>Sitz Bath</option><option>Douche</option><option>Full Body Mud Therapy</option><option>Full Body Massage</option><option>Therapeutic Massage</option></optgroup>
+              </select>
+            </div>
+            <div class="f2">
+              <div class="fg"><label for="a-date">Preferred Date</label><input id="a-date" type="date"></div>
+              <div class="fg"><label for="a-time">Preferred Time</label>
+                <select id="a-time"><option value="">— Any time —</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option></select>
+              </div>
+            </div>
+            <div class="fg"><label for="a-msg">Health Concern</label><textarea id="a-msg" placeholder="Briefly describe your health concern…"></textarea></div>
+            <button type="submit" class="sbtn" id="apptBtn">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Confirm Appointment
+            </button>
+          </form>
+          <button class="wa-alt" id="waBookBtn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+            Book via WhatsApp Instead
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" aria-labelledby="testi-heading">
+  <div class="w">
+    <div class="ctr rv">
+      <p class="ey">Patient Stories</p>
+      <h2 class="st" id="testi-heading">What Our Patients Say</h2>
+      <div class="dv c"></div>
+      <p class="sd">Real experiences — visible to everyone, submitted by patients like you</p>
+    </div>
+    <br><br>
+    <div class="feed-header rv">
+      <div class="feed-count" id="feedCount">Loading reviews…</div>
+      <div class="feed-sort">
+        <button class="fsort-btn on" data-sort="newest" onclick="sortReviews('newest',this)">Newest</button>
+        <button class="fsort-btn" data-sort="highest" onclick="sortReviews('highest',this)">Highest Rated</button>
+        <button class="fsort-btn" data-sort="oldest" onclick="sortReviews('oldest',this)">Oldest</button>
+      </div>
+    </div>
+    <div class="reviews-grid" id="reviewsGrid" aria-live="polite" aria-label="Patient reviews">
+      <div class="empty-st">
+        <svg viewBox="0 0 48 48"><path d="M24 4L30 17L44 18.5L34 28L37 42L24 35L11 42L14 28L4 18.5L18 17Z"/></svg>
+        <p>Loading reviews…</p>
+      </div>
+    </div>
+    <div class="load-more" id="loadMoreWrap" style="display:none">
+      <button class="lm-btn" id="loadMoreBtn" onclick="showMoreReviews()">Show More Reviews</button>
+    </div>
+    <div class="rev-card rv">
+      <h3>Share Your Experience</h3>
+      <p>Your review is <strong>instantly visible</strong> to all visitors — help others find natural healing</p>
+      <form id="revForm" novalidate>
+        <div class="f2">
+          <div class="fg"><label for="r-name">Your Name *</label><input id="r-name" type="text" placeholder="Name" required autocomplete="name"></div>
+          <div class="fg"><label for="r-loc">City</label><input id="r-loc" type="text" placeholder="Hyderabad" autocomplete="address-level2"></div>
+        </div>
+        <div class="fg"><label for="r-svc">Service Received</label><input id="r-svc" type="text" placeholder="e.g. Acupuncture, Yoga Therapy"></div>
+        <div class="fg">
+          <label>Your Rating *</label>
+          <div class="star-row" id="starRow" role="group" aria-label="Rating">
+            <button type="button" class="sb" data-v="1" aria-label="1 star">★</button>
+            <button type="button" class="sb" data-v="2" aria-label="2 stars">★</button>
+            <button type="button" class="sb" data-v="3" aria-label="3 stars">★</button>
+            <button type="button" class="sb" data-v="4" aria-label="4 stars">★</button>
+            <button type="button" class="sb on" data-v="5" aria-label="5 stars">★</button>
+          </div>
+          <input type="hidden" id="r-rating" value="5">
+        </div>
+        <div class="fg"><label for="r-text">Your Review *</label><textarea id="r-text" placeholder="Tell us about your experience and results…" required></textarea></div>
+        <button type="submit" class="sbtn" id="revBtn">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Submit Review — Visible Immediately
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESEARCH ═══ -->
+<section id="research" aria-labelledby="res-heading">
+  <div class="w">
+    <div class="ctr rv" style="margin-bottom:3rem">
+      <p class="ey" style="color:var(--GE)">Scientific Inquiry</p>
+      <h2 class="st" id="res-heading" style="color:#fff">Research &amp; Expertise</h2>
+      <div class="dv c"></div>
+      <p class="sd" style="color:rgba(255,255,255,.55)">Advancing holistic wellness through evidence-based research</p>
+    </div>
+    <div class="res-g">
+      <div class="rc2 rv d1">
+        <p class="rc2-tag">Ongoing Research</p>
+        <h3 class="rc2-title">Millets &amp; Pre-Diabetic Adults</h3>
+        <p class="rc2-body">Investigating the functional role of millets as a therapeutic food in managing pre-diabetic conditions — evidence-based nutrition for metabolic health and blood sugar regulation.</p>
+      </div>
+      <div class="rc2 rv d2">
+        <p class="rc2-tag">Ongoing Research</p>
+        <h3 class="rc2-title">Beetroot &amp; Carrot Juice for Anaemia</h3>
+        <p class="rc2-body">Exploring the therapeutic effects of nutrient-dense beetroot and carrot juice on individuals with anaemia — natural plant-based approaches to support healthy iron levels and haematological well-being.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" aria-labelledby="cont-heading">
+  <div class="w">
+    <div class="cont-g">
+      <div class="rv">
+        <p class="ey">Get In Touch</p>
+        <h2 class="cont-tl" id="cont-heading">Begin Your<br><em>Healing Journey</em></h2>
+        <p class="cont-bd">We're here to support your wellness journey. Reach out to book a consultation or ask any questions.</p>
+        <div class="clinks">
+          <a href="https://wa.me/918333888010" class="clink" target="_blank" rel="noopener">
+            <div class="clink-ic" style="background:#e8e0f5"><svg viewBox="0 0 24 24" fill="#9c69b8" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></div>
+            <div><div class="cl-lbl">WhatsApp</div><div class="cl-val">+91 8333888010</div></div>
+          </a>
+          <a href="tel:+918333888010" class="clink">
+            <div class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--GM)" stroke-width="1.8" stroke-linecap="round" width="22" height="22"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="cl-lbl">Phone</div><div class="cl-val">8333888010</div></div>
+          </a>
+          <a href="mailto:svastanawellness8@gmail.com" class="clink">
+            <div class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--GM)" stroke-width="1.8" stroke-linecap="round" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="cl-lbl">Email</div><div class="cl-val">svastanawellness8@gmail.com</div></div>
+          </a>
+        </div>
+        <a href="#book" class="btn btn-g">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a>
+      </div>
+      <div class="rv d2">
+        <div class="orbit" aria-hidden="true">
+          <div class="o-ring r1"><div class="o-dot od1"><div style="position:absolute;top:-1.6rem;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;color:var(--GM);letter-spacing:1px">Acupuncture</div></div></div>
+          <div class="o-ring r2"><div class="o-dot od2"><div style="position:absolute;top:-1.6rem;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;color:var(--GO);letter-spacing:1px">Yoga Therapy</div></div></div>
+          <div class="o-ctr">
+            <div class="o-leaf">🌿</div>
+            <div class="o-name">Dr. G. Monica<br>Sravanthi</div>
+            <div class="o-sub">MD Acupuncture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="w">
+    <div class="foot-g">
+      <div>
+        <div class="fbrand">Svastana Wellness</div>
+        <p class="ftag">Dedicated to natural, holistic healing through evidence-based naturopathic medicine. Dr. Monica's mission — empower every patient through nature.</p>
+        <div class="fsoc">
+          <a href="https://wa.me/918333888010" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></a>
+          <a href="mailto:svastanawellness8@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="tel:+918333888010" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h5>Therapies</h5><ul><li>Hydrotherapy</li><li>Acupuncture</li><li>Yoga Therapy</li><li>Mud Therapy</li><li>Diet Therapy</li><li>Physiotherapy</li></ul></div>
+      <div class="fcol"><h5>Services</h5><ul><li>Therapeutic Acupuncture</li><li>Cosmetic Acupuncture</li><li>Acupressure</li><li>Reflexology</li><li>Spinal Bath</li><li>Full Body Massage</li></ul></div>
+      <div class="fcol"><h5>Quick Links</h5><ul><li><a href="#about">About Doctor</a></li><li><a href="#book">Book Appointment</a></li><li><a href="#testimonials">Patient Reviews</a></li><li><a href="#research">Research</a></li><li><a href="#contact">Contact</a></li><li><a href="admin.html" target="_blank">🔐 Admin Dashboard</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2025 Svastana Wellness. All rights reserved.</span>
+      <span>Dr. G. Monica Sravanthi · BNYS · MBA (HA) · MD Acupuncture</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/918333888010" class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+</a>
+
+<script>
+// ─── PERFORMANCE: all JS deferred after DOM ready ───
+document.addEventListener('DOMContentLoaded', () => {
+
+/* ── HEADER ── */
+const hdr = document.getElementById('hdr');
+function updateHeader() {
+  const past = window.scrollY > 80;
+  hdr.classList.toggle('solid', past);
+  hdr.classList.toggle('glass', !past);
+}
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+/* ── MOBILE DRAWER ── */
+const burger = document.getElementById('burgerBtn');
+const drawer = document.getElementById('drawer');
+const drawerOv = document.getElementById('drawerOv');
+function openDrawer() {
+  drawer.classList.add('open');
+  drawerOv.classList.add('on');
+  burger.classList.add('open');
+  burger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawerOv.classList.remove('on');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+burger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+drawerOv.addEventListener('click', closeDrawer);
+document.querySelectorAll('.drawer a').forEach(a => a.addEventListener('click', closeDrawer));
+
+/* ── HERO PARTICLES ── */
+const pc = document.getElementById('hParticles');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'hp';
+  const s = Math.random() * 5 + 3;
+  p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;bottom:-${s}px;animation-duration:${10+Math.random()*15}s;animation-delay:-${Math.random()*15}s`;
+  pc.appendChild(p);
+}
+
+/* ── SCROLL REVEAL ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -35px 0px' });
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+/* ── TABS ── */
+document.querySelectorAll('.tp').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.tp').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.tpanel').forEach(p => p.classList.remove('on'));
+    this.classList.add('on');
+    this.setAttribute('aria-selected', 'true');
+    document.getElementById('tab-' + this.dataset.tab).classList.add('on');
+  });
+});
+
+/* ── COUNTER ANIMATION ── */
+let counted = false;
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) {
+    counted = true;
+    document.querySelectorAll('.ctr').forEach(el => {
+      const target = +el.dataset.n;
+      let n = 0;
+      const inc = target / 50;
+      const t = setInterval(() => {
+        n += inc;
+        if (n >= target) { el.textContent = target; clearInterval(t); }
+        else el.textContent = Math.floor(n);
+      }, 22);
+    });
+  }
+}, { threshold: 0.5 });
+const statsEl = document.getElementById('stats');
+if (statsEl) statsObs.observe(statsEl);
+
+/* ── TOAST ── */
+function toast(msg, ok = true) {
+  const el = document.createElement('div');
+  el.className = 'toast ' + (ok ? 'tok' : 'terr');
+  el.textContent = (ok ? '✓ ' : '✕ ') + msg;
+  el.setAttribute('role', 'alert');
+  document.getElementById('toastWrap').appendChild(el);
+  setTimeout(() => { el.style.opacity = '0'; el.style.transition = 'opacity .4s'; setTimeout(() => el.remove(), 400); }, 5000);
+}
+
+/* ── REVIEWS ENGINE (localStorage) ── */
+const STORE_KEY = 'sv_reviews_v1';
+const DEFAULT_REVIEWS = [
+  { id: 1, name: 'Priya Sharma', location: 'Hyderabad', rating: 5, text: 'Dr. Monica changed my life with her personalised diet and acupuncture sessions. I have been managing diabetes naturally for 8 months now.', service: 'Diet Therapy & Acupuncture', date: '2025-03-10' },
+  { id: 2, name: 'Ramesh Reddy', location: 'Secunderabad', rating: 5, text: 'Hydrotherapy and yoga sessions helped me recover from chronic back pain completely. Highly recommend Svastana Wellness to everyone.', service: 'Hydrotherapy & Yoga', date: '2025-04-02' },
+  { id: 3, name: 'Anitha Nair', location: 'Bangalore', rating: 5, text: 'Cosmetic acupuncture gave me amazing results. My skin looks younger and more radiant. Dr. Monica is truly gifted.', service: 'Cosmetic Acupuncture', date: '2025-04-18' },
+  { id: 4, name: 'Suresh Kumar', location: 'Chennai', rating: 5, text: 'Full body mud therapy was transformative. The detox helped with joint pain significantly. Excellent facility and caring team.', service: 'Mud Therapy', date: '2025-05-01' },
+];
+
+let allReviews = [];
+let visibleCount = 6;
+
+function getLocalReviews() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || '[]'); } catch { return []; }
+}
+function saveLocalReview(r) {
+  const arr = getLocalReviews();
+  arr.unshift(r);
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); } catch {}
+}
+
+function loadReviews() {
+  const local = getLocalReviews();
+  const merged = [...local, ...DEFAULT_REVIEWS];
+  const seen = new Set();
+  allReviews = merged.filter(r => {
+    const key = r.text.slice(0, 30);
+    if (seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+  renderReviews();
+}
+
+let currentSort = 'newest';
+function sortReviews(by, btn) {
+  document.querySelectorAll('.fsort-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  currentSort = by;
+  visibleCount = 6;
+  renderReviews();
+}
+window.sortReviews = sortReviews;
+
+function sortedReviews() {
+  const arr = [...allReviews];
+  if (currentSort === 'newest') arr.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+  else if (currentSort === 'oldest') arr.sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+  else if (currentSort === 'highest') arr.sort((a, b) => (b.rating || 5) - (a.rating || 5));
+  return arr;
+}
+
+function renderReviews() {
+  const grid = document.getElementById('reviewsGrid');
+  const countEl = document.getElementById('feedCount');
+  const lmWrap = document.getElementById('loadMoreWrap');
+  const sorted = sortedReviews();
+
+  countEl.textContent = `${allReviews.length} review${allReviews.length !== 1 ? 's' : ''}`;
+
+  const visible = sorted.slice(0, visibleCount);
+  if (!visible.length) {
+    grid.innerHTML = '<div class="empty-st"><svg viewBox="0 0 48 48"><path d="M24 4L30 17L44 18.5L34 28L37 42L24 35L11 42L14 28L4 18.5L18 17Z" stroke-width="2"/></svg><p>No reviews yet — be the first!</p></div>';
+    lmWrap.style.display = 'none';
+    return;
+  }
+
+  grid.innerHTML = visible.map((r, i) => {
+    const isNew = r._new;
+    const stars = '★'.repeat(Math.min(5, r.rating || 5)) + '☆'.repeat(5 - Math.min(5, r.rating || 5));
+    const initials = (r.name || 'A')[0].toUpperCase();
+    const fmtDate = r.date ? new Date(r.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+    return `<div class="rcard" style="animation-delay:${i * 0.05}s">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div class="rc-stars">${stars}</div>
+        ${isNew ? '<span class="rc-new">New</span>' : ''}
+      </div>
+      <div class="rc-q">"${escHtml(r.text)}"</div>
+      <div class="rc-author">
+        <div class="rc-av">${initials}</div>
+        <div>
+          <div class="rc-name">${escHtml(r.name)}</div>
+          <div class="rc-meta">${escHtml(r.location || '')}${fmtDate ? ' · ' + fmtDate : ''}</div>
+          ${r.service ? `<span class="rc-svc">${escHtml(r.service)}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  lmWrap.style.display = sorted.length > visibleCount ? 'flex' : 'none';
+}
+
+function showMoreReviews() {
+  visibleCount += 6;
+  renderReviews();
+}
+window.showMoreReviews = showMoreReviews;
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+loadReviews();
+
+/* ── REVIEW FORM ── */
+let selRating = 5;
+document.querySelectorAll('.sb').forEach(b => {
+  b.addEventListener('click', function () {
+    selRating = +this.dataset.v;
+    document.getElementById('r-rating').value = selRating;
+    document.querySelectorAll('.sb').forEach(s => s.classList.toggle('on', +s.dataset.v <= selRating));
+  });
+  b.addEventListener('mouseenter', function () {
+    document.querySelectorAll('.sb').forEach(s => s.classList.toggle('on', +s.dataset.v <= +this.dataset.v));
+  });
+  b.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.sb').forEach(s => s.classList.toggle('on', +s.dataset.v <= selRating));
+  });
+});
+
+document.getElementById('revForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('r-name').value.trim();
+  const text = document.getElementById('r-text').value.trim();
+  if (!name || !text) { toast('Please fill in your name and review.', false); return; }
+
+  const btn = document.getElementById('revBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const newReview = {
+    id: Date.now(),
+    name,
+    location: document.getElementById('r-loc').value.trim(),
+    service: document.getElementById('r-svc').value.trim(),
+    rating: selRating,
+    text,
+    date: new Date().toISOString().split('T')[0],
+    _new: true,
+  };
+
+  saveLocalReview(newReview);
+  allReviews.unshift(newReview);
+  currentSort = 'newest';
+  visibleCount = Math.max(visibleCount, allReviews.indexOf(newReview) + 1);
+  renderReviews();
+  toast('🌿 Your review is now live! Thank you for sharing.', true);
+  this.reset();
+  selRating = 5;
+  document.querySelectorAll('.sb').forEach(s => s.classList.toggle('on', +s.dataset.v <= 5));
+
+  btn.disabled = false;
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Submit Review — Visible Immediately';
+});
+
+/* ── APPOINTMENT FORM + WHATSAPP ── */
+document.getElementById('apptForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('a-name').value.trim();
+  const phone = document.getElementById('a-phone').value.trim();
+  const svc = document.getElementById('a-svc').value;
+  if (!name || !phone || !svc) { toast('Please fill in Name, Phone and Service.', false); return; }
+
+  const btn = document.getElementById('apptBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Booking…';
+
+  const body = { 
+    name, phone, 
+    email: document.getElementById('a-email').value, 
+    service: svc, 
+    date: document.getElementById('a-date').value, 
+    time: document.getElementById('a-time').value, 
+    message: document.getElementById('a-msg').value 
+  };
+
+  // Save to localStorage for admin dashboard
+  const appts = JSON.parse(localStorage.getItem('sv_appointments') || '[]');
+  appts.unshift({ ...body, id: Date.now(), timestamp: new Date().toISOString(), status: 'new' });
+  localStorage.setItem('sv_appointments', JSON.stringify(appts));
+
+  toast('🎉 Appointment request received! We will contact you soon.', true);
+  this.reset();
+
+  // Redirect to WhatsApp with pre-filled message
+  const msg = encodeURIComponent(`🌿 New Appointment Request\n\nName: ${name}\nPhone: ${phone}\nService: ${svc}\nDate: ${body.date || 'Flexible'}\nTime: ${body.time || 'Any'}\nConcern: ${body.message || 'None'}`);
+  setTimeout(() => window.open(`https://wa.me/918333888010?text=${msg}`, '_blank'), 800);
+
+  btn.disabled = false;
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Confirm Appointment';
+});
+
+document.getElementById('waBookBtn').addEventListener('click', () => {
+  window.open('https://wa.me/918333888010?text=Hi%2C+I+would+like+to+book+an+appointment+at+Svastana+Wellness.', '_blank');
+});
+
+/* ── ACTIVE NAV ── */
+const sections = ['about', 'services', 'book', 'testimonials', 'research', 'contact'];
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY + 140;
+  sections.forEach(id => {
+    const s = document.getElementById(id);
+    const l = document.querySelector(`nav a[href="#${id}"]`);
+    if (s && l) l.classList.toggle('on', sy >= s.offsetTop && sy < s.offsetTop + s.offsetHeight);
+  });
+}, { passive: true });
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+/* ── KEYBOARD: hero scroll on Enter ── */
+document.querySelector('.hero-scroll')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* ── 3D TILT (desktop only) ── */
+if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  document.querySelectorAll('.tc').forEach(c => {
+    c.addEventListener('mousemove', e => {
+      const r = c.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - .5) * 9;
+      const ry = -((e.clientX - r.left) / r.width - .5) * 9;
+      c.style.transform = `translateY(-12px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    c.addEventListener('mouseleave', () => c.style.transform = '');
+  });
+}
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>
