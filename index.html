@@ -680,14 +680,23 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
       <p class="sd">Real experiences — visible to everyone, submitted by patients like you</p>
     </div>
     <br><br>
-    <div class="feed-header rv">
-      <div class="feed-count" id="feedCount">Loading reviews…</div>
-      <div class="feed-sort">
-        <button class="fsort-btn on" data-sort="newest" onclick="sortReviews('newest',this)">Newest</button>
-        <button class="fsort-btn" data-sort="highest" onclick="sortReviews('highest',this)">Highest Rated</button>
-        <button class="fsort-btn" data-sort="oldest" onclick="sortReviews('oldest',this)">Oldest</button>
-      </div>
+    <!-- Replace from <div class="feed-header"> down to </div> (load-more wrap) with: -->
+
+<div style="padding:1.5rem 0;overflow:hidden">
+  <div style="text-align:center;font-size:.75rem;color:var(--MT);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:6px">
+    ← Swipe or drag to browse →
+  </div>
+  <div id="trackWrap" style="overflow:hidden;cursor:grab;border-radius:var(--RL)">
+    <div id="carouselTrack" style="display:flex;gap:20px;transition:transform .35s cubic-bezier(.25,.8,.25,1)"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem">
+    <div id="carouselDots" style="display:flex;gap:6px"></div>
+    <div style="display:flex;gap:8px">
+      <button id="cprev" class="lm-btn">←</button>
+      <button id="cnext" class="lm-btn">→</button>
     </div>
+  </div>
+</div>
     <div class="reviews-grid" id="reviewsGrid" aria-live="polite" aria-label="Patient reviews">
       <div class="empty-st">
         <svg viewBox="0 0 48 48"><path d="M24 4L30 17L44 18.5L34 28L37 42L24 35L11 42L14 28L4 18.5L18 17Z"/></svg>
