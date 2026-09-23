@@ -379,6 +379,22 @@ scroll-snap-align:start;
 .od1{background:var(--GM)}.od2{background:var(--GO)}
 @media(max-width:900px){.orbit{display:none}}
 
+/* ─── CERTIFICATE VERIFICATION ─── */
+#certverify{background:var(--CR)}
+.verify-wrap{max-width:600px;margin:0 auto}
+.verify-card{background:var(--WH);border-radius:var(--RL);padding:2.2rem;border:1px solid var(--BD);box-shadow:var(--SH)}
+.verify-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.verify-row .fg{flex:1;min-width:200px;margin-bottom:0}
+.verify-row .btn{flex-shrink:0;height:fit-content}
+#certResult{margin-top:1.4rem;border-radius:var(--R);padding:1.1rem 1.3rem;font-size:.86rem;display:none}
+#certResult.show{display:block;animation:cardIn .35s ease both}
+#certResult.ok{background:rgba(107,91,149,.08);border:1px solid var(--GL);color:var(--DK)}
+#certResult.bad{background:rgba(185,28,28,.06);border:1px solid rgba(185,28,28,.35);color:#8a1616}
+#certResult dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin-top:.5rem}
+#certResult dt{font-weight:500;color:var(--MT);font-size:.76rem;text-transform:uppercase;letter-spacing:1px}
+#certResult dd{font-size:.86rem}
+.verify-note{font-size:.72rem;color:var(--MT);margin-top:1rem;line-height:1.6}
+
 footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
 .foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
 @media(max-width:900px){.foot-g{grid-template-columns:1fr 1fr}}
@@ -474,6 +490,7 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
   <a href="#testimonials" class="drawer-link">⭐ Patient Reviews</a>
   <a href="#research" class="drawer-link">🔬 Research</a>
   <a href="#contact" class="drawer-link">📞 Contact</a>
+  <a href="#certverify" class="drawer-link">🎓 Verify Certificate</a>
   <br>
   <a href="https://wa.me/918333888010" target="_blank" rel="noopener" style="background:#9c69b8;border-radius:30px;justify-content:center;margin-top:.5rem;border:none;color:white">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 2.079.549 4.13 1.595 5.945L0 24l6.224-1.624c1.757.95 3.724 1.447 5.793 1.447 6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
@@ -605,7 +622,7 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
       <button class="tp" data-tab="services" role="tab" aria-selected="false" aria-controls="tab-services">Services Provided</button>
     </div>
     <div class="tpanel tg on" id="tab-therapies" role="tabpanel">
-      <div class="tc rv d1"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M14 3C14 3 7 11 7 17C7 20.9 10.1 24 14 24C17.9 24 21 20.9 21 17C21 11 14 3 14 3Z" fill="rgba(107,91,149,.1)"/><path d="M10 17C10 19.2 11.8 21 14 21"/><path d="M5 26H23M3 26C3 26 5 24 7 24C9 24 10 26 12 26C14 26 15 24 17 24C19 24 20 26 22 26" stroke-width="1"/></svg></div><div class="tc-n">Hydrotherapy</div><div class="tc-d">Water-based healing to detoxify, restore and revitalise natural flow</div></div>
+      <div class="tc rv d1"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M14 3C14 3 7 11 7 17C7 20.9 10.1 24 14 24C17.9 24 21 20.9 21 17C21 11 14 3 14 3Z" fill="rgba(107,91,149,.1)"/><path d="M10 17C10 19.2 11.8 21 14 21"/><path d="M5 26H23M3 26C3 26 5 24 7 24C9 24 10 26 12 26C14 26 15 24 17 24C19 26 20 26 22 26" stroke-width="1"/></svg></div><div class="tc-n">Hydrotherapy</div><div class="tc-d">Water-based healing to detoxify, restore and revitalise natural flow</div></div>
       <div class="tc rv d2"><div class="tc-ico"><svg viewBox="0 0 28 28"><ellipse cx="14" cy="13" rx="6" ry="9" fill="rgba(107,91,149,.1)"/><path d="M11 10C11.5 11 13 11.5 14 11.5C15 11.5 16.5 11 17 10M11 16C11.5 17 13 17.5 14 17.5C15 17.5 16.5 17 17 16"/><path d="M8 21L5 26M20 21L23 26"/></svg></div><div class="tc-n">Manipulative Therapy</div><div class="tc-d">Restores mobility, eases tension and relieves chronic pain</div></div>
       <div class="tc rv d3"><div class="tc-ico"><svg viewBox="0 0 28 28"><line x1="14" y1="3" x2="14" y2="25" stroke-width="1.6"/><line x1="9" y1="6" x2="19" y2="6"/><circle cx="14" cy="14" r="3" fill="rgba(107,91,149,.2)"/><path d="M7 10L5 14L7 18M21 10L23 14L21 18" stroke-width="1.1"/></svg></div><div class="tc-n">Acupuncture</div><div class="tc-d">Ancient technique balancing vital energy and healing conditions</div></div>
       <div class="tc rv d4"><div class="tc-ico"><svg viewBox="0 0 28 28"><path d="M15 3L8 15H13.5L12 25L20 13H14.5Z" fill="rgba(184,169,217,.15)" stroke="var(--GO)" stroke-width="1.4"/><circle cx="5" cy="8" r="2.2" fill="rgba(107,91,149,.15)"/><circle cx="23" cy="20" r="2.2" fill="rgba(107,91,149,.15)"/></svg></div><div class="tc-n">Electrotherapy</div><div class="tc-d">Electrical modalities for pain management &amp; accelerated healing</div></div>
@@ -648,7 +665,7 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
     <br><br>
     <div class="team-g">
 
-    
+
 
 <!-- Dr Kathi Akhileshwari -->
 <div class="tm rv d2">
@@ -892,6 +909,37 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
   </div>
 </section>
 
+<!-- CERTIFICATE VERIFICATION -->
+<section id="certverify" aria-labelledby="certverify-heading">
+  <div class="w">
+    <div class="ctr rv">
+      <p class="ey">Authenticity Check</p>
+      <h2 class="st" id="certverify-heading">Verify a Certificate</h2>
+      <div class="dv c"></div>
+      <p class="sd">Enter the certificate ID printed on your certificate to confirm it was issued by Svastana Wellness.</p>
+    </div>
+    <br>
+    <div class="verify-wrap rv d1">
+      <div class="verify-card">
+        <form id="certForm" novalidate>
+          <div class="verify-row">
+            <div class="fg">
+              <label for="cert-id">Certificate ID</label>
+              <input id="cert-id" type="text" placeholder="e.g. SVW-2025-0042" autocomplete="off" required>
+            </div>
+            <button type="submit" class="btn btn-g" id="certBtn">
+              <svg class="ic" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              Verify
+            </button>
+          </div>
+        </form>
+        <div id="certResult" role="status" aria-live="polite"></div>
+        <p class="verify-note">Certificate records are pulled live from our official register. If your certificate isn't found, please contact us via WhatsApp or email so we can look into it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- FOOTER -->
@@ -916,7 +964,7 @@ footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
       </div>
       <div class="fcol"><h5>Therapies</h5><ul><li>Hydrotherapy</li><li>Acupuncture</li><li>Yoga Therapy</li><li>Mud Therapy</li><li>Diet Therapy</li><li>Physiotherapy</li></ul></div>
       <div class="fcol"><h5>Services</h5><ul><li>Therapeutic Acupuncture</li><li>Cosmetic Acupuncture</li><li>Acupressure</li><li>Reflexology</li><li>Spinal Bath</li><li>Full Body Massage</li></ul></div>
-      <div class="fcol"><h5>Quick Links</h5><ul><li><a href="#about">About Doctor</a></li><li><a href="#team">Our Team</a></li><li><a href="#book">Book Appointment</a></li><li><a href="#testimonials">Patient Reviews</a></li><li><a href="#research">Research</a></li><li><a href="#contact">Contact</a></li><li><a href="admin.html" target="_blank">🔐 Admin Dashboard</a></li></ul></div>
+      <div class="fcol"><h5>Quick Links</h5><ul><li><a href="#about">About Doctor</a></li><li><a href="#team">Our Team</a></li><li><a href="#book">Book Appointment</a></li><li><a href="#testimonials">Patient Reviews</a></li><li><a href="#research">Research</a></li><li><a href="#contact">Contact</a></li><li><a href="#certverify">🎓 Verify Certificate</a></li><li><a href="admin.html" target="_blank">🔐 Admin Dashboard</a></li></ul></div>
     </div>
     <div class="foot-bot">
       <span>© 2025 Svastana Wellness. All rights reserved.</span>
@@ -1226,8 +1274,443 @@ document.getElementById('waBookBtn').addEventListener('click', () => {
   window.open('https://wa.me/918333888010?text=Hi%2C+I+would+like+to+book+an+appointment+at+Svastana+Wellness.', '_blank');
 });
 
+/* ── CERTIFICATE VERIFICATION ──
+   Google Sheet:
+   https://docs.google.com/spreadsheets/d/1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM/edit
+
+   Current sheet columns:
+   Certificate ID | Name | Position | Duration | Issue Date
+
+   Optional column:
+   Status
+
+   IMPORTANT:
+   The Google Sheet must be accessible to the public as Viewer,
+   or published to the web, so the browser can read the data.
+*/
+
+/* Google Sheet ID */
+const CERT_SHEET_ID = '1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM';
+
+/*
+ * GID of the certificate sheet/tab.
+ * 0 = first/default tab.
+ */
+const CERT_SHEET_GID = '0';
+
+/*
+ * Google Visualization endpoint.
+ * It returns the selected Google Sheet tab as CSV.
+ */
+const CERT_SHEET_CSV_URL =
+  `https://docs.google.com/spreadsheets/d/${CERT_SHEET_ID}/gviz/tq?tqx=out:csv&gid=${CERT_SHEET_GID}`;
+
+
+/* ── CSV PARSER ── */
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    const next = text[i + 1];
+
+    if (inQuotes) {
+      if (c === '"' && next === '"') {
+        field += '"';
+        i++;
+      } else if (c === '"') {
+        inQuotes = false;
+      } else {
+        field += c;
+      }
+    } else {
+      if (c === '"') {
+        inQuotes = true;
+      } else if (c === ',') {
+        row.push(field);
+        field = '';
+      } else if (c === '\n' || c === '\r') {
+        if (field !== '' || row.length) {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = '';
+        }
+
+        if (c === '\r' && next === '\n') {
+          i++;
+        }
+      } else {
+        field += c;
+      }
+    }
+  }
+
+  if (field !== '' || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows.filter(r =>
+    r.some(v => String(v).trim() !== '')
+  );
+}
+
+
+/* ── CERTIFICATE ELEMENTS ── */
+const certForm = document.getElementById('certForm');
+const certBtn = document.getElementById('certBtn');
+const certResult = document.getElementById('certResult');
+
+
+/* ── SHOW CERTIFICATE RESULT ── */
+function showCertResult(html, ok) {
+  if (!certResult) return;
+
+  certResult.innerHTML = html;
+  certResult.className = 'show ' + (ok ? 'ok' : 'bad');
+}
+
+
+/* ── ESCAPE USER DATA BEFORE INSERTING INTO HTML ── */
+function escapeCertificateText(value) {
+  const div = document.createElement('div');
+  div.textContent = value == null ? '' : String(value);
+  return div.innerHTML;
+}
+
+
+/* ── NORMALIZE CERTIFICATE ID ── */
+function normalizeCertificateId(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '');
+}
+
+
+/* ── CERTIFICATE VERIFICATION ── */
+if (certForm && certBtn && certResult) {
+
+  certForm.addEventListener('submit', async function (e) {
+
+    e.preventDefault();
+
+    const idInput = document.getElementById('cert-id');
+    const query = idInput ? idInput.value.trim() : '';
+
+    if (!query) {
+      toast('Please enter a certificate ID.', false);
+      return;
+    }
+
+    certBtn.disabled = true;
+
+    const originalButtonHTML = certBtn.innerHTML;
+    certBtn.innerHTML = '⏳ Checking…';
+
+    try {
+
+      /*
+       * Add cache-busting so newly added certificates
+       * are picked up without waiting for browser cache.
+       */
+      const requestUrl =
+        CERT_SHEET_CSV_URL +
+        '&cachebust=' +
+        Date.now();
+
+      const response = await fetch(requestUrl, {
+        method: 'GET',
+        cache: 'no-store'
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `Google Sheet request failed: ${response.status}`
+        );
+      }
+
+      const csvText = await response.text();
+
+      if (!csvText || !csvText.trim()) {
+        throw new Error('Google Sheet returned empty data.');
+      }
+
+      const rows = parseCsv(csvText);
+
+      if (!rows.length) {
+        throw new Error('No rows found in Google Sheet.');
+      }
+
+
+      /* ── READ HEADER ROW ── */
+
+      const header = rows[0].map(h =>
+        String(h)
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, ' ')
+      );
+
+
+      /*
+       * Your current Google Sheet:
+       *
+       * A = Certificate ID
+       * B = Name
+       * C = Position
+       * D = Duration
+       * E = Issue Date
+       *
+       * Status is optional.
+       */
+
+      const idIdx = header.findIndex(h =>
+        h === 'certificate id' ||
+        h === 'certificateid' ||
+        h === 'certificate' ||
+        h === 'certificate no' ||
+        h === 'certificate number' ||
+        h === 'id'
+      );
+
+      const nameIdx = header.findIndex(h =>
+        h === 'name' ||
+        h.includes('name')
+      );
+
+      const positionIdx = header.findIndex(h =>
+        h === 'position' ||
+        h.includes('position') ||
+        h === 'role'
+      );
+
+      const durationIdx = header.findIndex(h =>
+        h === 'duration' ||
+        h.includes('duration')
+      );
+
+      const dateIdx = header.findIndex(h =>
+        h === 'issue date' ||
+        h.includes('issue date') ||
+        h === 'date'
+      );
+
+      const statusIdx = header.findIndex(h =>
+        h === 'status' ||
+        h.includes('status')
+      );
+
+
+      /* ── MAKE SURE CERTIFICATE ID COLUMN EXISTS ── */
+
+      if (idIdx === -1) {
+        throw new Error(
+          'Certificate ID column was not found in the Google Sheet.'
+        );
+      }
+
+
+      /* ── FIND CERTIFICATE ── */
+
+      const normalizedQuery =
+        normalizeCertificateId(query);
+
+      const match = rows
+        .slice(1)
+        .find(row => {
+          const certificateId =
+            normalizeCertificateId(
+              row[idIdx]
+            );
+
+          return certificateId === normalizedQuery;
+        });
+
+
+      /* ── CERTIFICATE FOUND ── */
+
+      if (match) {
+
+        const name =
+          nameIdx >= 0
+            ? String(match[nameIdx] || '').trim()
+            : '';
+
+        const position =
+          positionIdx >= 0
+            ? String(match[positionIdx] || '').trim()
+            : '';
+
+        const duration =
+          durationIdx >= 0
+            ? String(match[durationIdx] || '').trim()
+            : '';
+
+        const issueDate =
+          dateIdx >= 0
+            ? String(match[dateIdx] || '').trim()
+            : '';
+
+        /*
+         * Your current sheet has no Status column.
+         * Therefore "Valid" is used by default.
+         *
+         * If you later add a Status column,
+         * its value will automatically be displayed.
+         */
+        const status =
+          statusIdx >= 0 &&
+          String(match[statusIdx] || '').trim()
+            ? String(match[statusIdx]).trim()
+            : 'Valid';
+
+
+        /* ── DISPLAY RESULT ── */
+
+        showCertResult(`
+          <div class="cert-success">
+
+            <div class="cert-check">
+              ✓
+            </div>
+
+            <h3>Certificate Verified</h3>
+
+            <p class="cert-message">
+              This certificate has been verified successfully
+              against the official Svastana Wellness register.
+            </p>
+
+            <dl>
+
+              ${
+                name
+                  ? `
+                    <dt>Name</dt>
+                    <dd>${escapeCertificateText(name)}</dd>
+                  `
+                  : ''
+              }
+
+              ${
+                position
+                  ? `
+                    <dt>Position</dt>
+                    <dd>${escapeCertificateText(position)}</dd>
+                  `
+                  : ''
+              }
+
+              ${
+                duration
+                  ? `
+                    <dt>Duration</dt>
+                    <dd>${escapeCertificateText(duration)}</dd>
+                  `
+                  : ''
+              }
+
+              ${
+                issueDate
+                  ? `
+                    <dt>Issue Date</dt>
+                    <dd>${escapeCertificateText(issueDate)}</dd>
+                  `
+                  : ''
+              }
+
+              <dt>Status</dt>
+              <dd>
+                <strong>
+                  ${escapeCertificateText(status)}
+                </strong>
+              </dd>
+
+            </dl>
+
+          </div>
+        `, true);
+
+
+      } else {
+
+        /* ── CERTIFICATE NOT FOUND ── */
+
+        showCertResult(`
+          <div class="cert-error">
+
+            <div class="cert-cross">
+              ×
+            </div>
+
+            <h3>Certificate Not Found</h3>
+
+            <p>
+              No certificate was found with the ID:
+              <strong>
+                ${escapeCertificateText(query)}
+              </strong>
+            </p>
+
+            <p>
+              Please check the certificate ID and try again.
+              If you believe this is an error, contact
+              Svastana Wellness.
+            </p>
+
+          </div>
+        `, false);
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        'Certificate verification error:',
+        error
+      );
+
+      showCertResult(`
+        <div class="cert-error">
+
+          <div class="cert-cross">
+            !
+          </div>
+
+          <h3>Verification Temporarily Unavailable</h3>
+
+          <p>
+            We could not connect to the certificate register
+            right now.
+          </p>
+
+          <p>
+            Please try again shortly or contact Svastana
+            Wellness via WhatsApp.
+          </p>
+
+        </div>
+      `, false);
+
+    } finally {
+
+      certBtn.disabled = false;
+      certBtn.innerHTML = originalButtonHTML;
+
+    }
+
+  });
+
+}
+
+
 /* ── ACTIVE NAV ── */
-const sections = ['about','services','team','book','testimonials','research','contact'];
+const sections = ['about','services','team','book','testimonials','research','contact','certverify'];
 window.addEventListener('scroll', () => {
   const sy = window.scrollY + 140;
   sections.forEach(id => {
@@ -1268,4 +1751,4 @@ loadReviews();
 }); // end DOMContentLoaded
 </script>
 </body>
-</html> 
+</html>
