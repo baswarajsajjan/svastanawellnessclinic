@@ -380,148 +380,56 @@ scroll-snap-align:start;
 @media(max-width:900px){.orbit{display:none}}
 
 /* ── CERTIFICATE VERIFICATION (Google Sheet) ──
-   Sheet: https://docs.google.com/spreadsheets/d/1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM/edit
-   Columns: Certificate ID | Name | Course | Duration | Issue Date | Status
-   The sheet must be shared as "Anyone with the link: Viewer".
-*/
-const CERT_SHEET_ID  = '1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM';
-const CERT_SHEET_GID = '0';
-const CERT_BASE = `https://docs.google.com/spreadsheets/d/${CERT_SHEET_ID}/gviz/tq`;
-
-function parseCsv(text) {
-  const rows = []; let row = [], field = '', q = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i], n = text[i + 1];
-    if (q) {
-      if (c === '"' && n === '"') { field += '"'; i++; }
-      else if (c === '"') q = false;
-      else field += c;
-    } else if (c === '"') q = true;
-    else if (c === ',') { row.push(field); field = ''; }
-    else if (c === '\n' || c === '\r') {
-      if (field !== '' || row.length) { row.push(field); rows.push(row); row = []; field = ''; }
-      if (c === '\r' && n === '\n') i++;
-    } else field += c;
-  }
-  if (field !== '' || row.length) { row.push(field); rows.push(row); }
-  return rows.filter(r => r.some(v => String(v).trim() !== ''));
-}
-
-/* Method 1: CSV via fetch */
-async function loadViaCsv() {
-  const res = await fetch(`${CERT_BASE}?tqx=out:csv&gid=${CERT_SHEET_GID}&_=${Date.now()}`, { cache: 'no-store' });
-  if (!res.ok) throw new Error('Google returned HTTP ' + res.status);
-  const text = await res.text();
-  if (/^\s*</.test(text)) throw new Error('Sheet is not public (Google sent a login page).');
-  return parseCsv(text);
-}
-
-/* Method 2: script-tag (JSONP) fallback, avoids browser CORS problems */
-function loadViaJsonp() {
-  return new Promise((resolve, reject) => {
-    const cb = 'svwCert_' + Date.now();
-    const s = document.createElement('script');
-    const done = () => { clearTimeout(t); delete window[cb]; s.remove(); };
-    const t = setTimeout(() => { done(); reject(new Error('Timed out reaching Google Sheets.')); }, 10000);
-    window[cb] = resp => {
-      done();
-      if (!resp || resp.status === 'error') return reject(new Error('Google Sheets returned an error.'));
-      const cell = c => (c ? (c.f != null ? c.f : (c.v != null ? c.v : '')) : '');
-      const labels = resp.table.cols.map(c => c.label || '');
-      const body = resp.table.rows.map(r => r.c.map(cell));
-      resolve(labels.every(l => !l) ? body : [labels, ...body]);
-    };
-    s.onerror = () => { done(); reject(new Error('Could not load the sheet (is it public?).')); };
-    s.src = `${CERT_BASE}?tqx=responseHandler:${cb}&gid=${CERT_SHEET_GID}&_=${Date.now()}`;
-    document.body.appendChild(s);
-  });
-}
-
-async function loadCertRows() {
-  try { return await loadViaCsv(); }
-  catch (e1) {
-    console.warn('CSV method failed, trying fallback:', e1);
-    try { return await loadViaJsonp(); }
-    catch (e2) { throw new Error(e1.message + ' / ' + e2.message); }
-  }
-}
-
-const certForm   = document.getElementById('certForm');
-const certBtn    = document.getElementById('certBtn');
+   
+/* ── CERTIFICATE VERIFICATION (Google Apps Script) ── */
+const CERT_API = 'https://script.google.com/macros/s/AKfycbyHuLOQbR2KhswC30-4xBMIZZk7oOFdRYo9DcFLGYyZg5qEKBma55JBe2nAIPkQR__s/exec';
+const certForm = document.getElementById('certForm');
+const certBtn = document.getElementById('certBtn');
 const certResult = document.getElementById('certResult');
+const esc = v => escHtml(v == null ? '' : v);
 
 function showCertResult(html, ok) {
   certResult.innerHTML = html;
   certResult.className = 'show ' + (ok ? 'ok' : 'bad');
 }
-const esc = v => escHtml(v == null ? '' : v);
-const normId = v => String(v || '').trim().toLowerCase().replace(/\s+/g, '');
 
-if (certForm && certBtn && certResult) {
-  certForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const query = document.getElementById('cert-id').value.trim();
-    if (!query) { toast('Please enter a certificate ID.', false); return; }
-
-    certBtn.disabled = true;
-    const btnHtml = certBtn.innerHTML;
-    certBtn.innerHTML = '⏳ Checking…';
-
-    try {
-      const rows = await loadCertRows();
-      if (!rows.length) throw new Error('The sheet is empty.');
-
-      const header = rows[0].map(h => String(h).trim().toLowerCase().replace(/\s+/g, ' '));
-      const find = fn => header.findIndex(fn);
-      const idIdx     = find(h => h.includes('certificate') || h === 'id');
-      const nameIdx   = find(h => h.includes('name'));
-      const courseIdx = find(h => h.includes('course') || h.includes('position') || h === 'role');
-      const durIdx    = find(h => h.includes('duration'));
-      const dateIdx   = find(h => h.includes('issue') || h === 'date');
-      const statusIdx = find(h => h.includes('status'));
-
-      if (idIdx === -1) throw new Error('"Certificate ID" column not found. Headers seen: ' + header.join(', '));
-
-      const q = normId(query);
-      const m = rows.slice(1).find(r => normId(r[idIdx]) === q);
-      const get = i => (i >= 0 && m ? String(m[i] || '').trim() : '');
-
-      if (!m) {
-        showCertResult(`
-          <h3>Certificate Not Found</h3>
-          <p>No certificate was found with ID <strong>${esc(query)}</strong>.</p>
-          <p>Please check the ID and try again, or contact Svastana Wellness.</p>`, false);
-        return;
-      }
-
-      let status = get(statusIdx) || 'Valid';
+certForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const query = document.getElementById('cert-id').value.trim();
+  if (!query) { toast('Please enter a certificate ID.', false); return; }
+  certBtn.disabled = true;
+  const btnHtml = certBtn.innerHTML;
+  certBtn.innerHTML = '⏳ Checking…';
+  try {
+    const res = await fetch(CERT_API + '?id=' + encodeURIComponent(query));
+    const j = await res.json();
+    if (!j.found) {
+      showCertResult(`<h3>Certificate Not Found</h3>
+        <p>No certificate found with ID <strong>${esc(query)}</strong>.</p>
+        <p>Please check the ID and try again, or contact Svastana Wellness.</p>`, false);
+    } else {
+      const d = j.data;
+      let status = (d['Status'] || 'Valid').trim();
       status = status.charAt(0).toUpperCase() + status.slice(1).toLowerCase();
       const valid = status === 'Valid';
-
-      showCertResult(`
-        <h3>${valid ? '✓ Certificate Verified' : '⚠ Certificate ' + esc(status)}</h3>
-        <p>${valid ? 'Issued by Svastana Wellness and found in our official register.' : 'This certificate is in our register but is not currently valid.'}</p>
+      showCertResult(`<h3>${valid ? '✓ Certificate Verified' : '⚠ Certificate ' + esc(status)}</h3>
         <dl>
-          ${get(nameIdx)   ? `<dt>Name</dt><dd>${esc(get(nameIdx))}</dd>` : ''}
-          ${get(courseIdx) ? `<dt>Course</dt><dd>${esc(get(courseIdx))}</dd>` : ''}
-          ${get(durIdx)    ? `<dt>Duration</dt><dd>${esc(get(durIdx))}</dd>` : ''}
-          ${get(dateIdx)   ? `<dt>Issue Date</dt><dd>${esc(get(dateIdx))}</dd>` : ''}
+          <dt>Name</dt><dd>${esc(d['Name'])}</dd>
+          <dt>Course</dt><dd>${esc(d['Course'])}</dd>
+          <dt>Duration</dt><dd>${esc(d['Duration'])}</dd>
+          <dt>Issue Date</dt><dd>${esc(d['Issue Date'])}</dd>
           <dt>Status</dt><dd><strong>${esc(status)}</strong></dd>
         </dl>`, valid);
-
-    } catch (err) {
-      console.error('Certificate verification error:', err);
-      showCertResult(`
-        <h3>Verification Temporarily Unavailable</h3>
-        <p>We could not read the certificate register right now.</p>
-        <p style="font-size:.75rem;opacity:.75">Reason: ${esc(err.message)}</p>
-        <p>Please try again shortly or contact Svastana Wellness via WhatsApp.</p>`, false);
-    } finally {
-      certBtn.disabled = false;
-      certBtn.innerHTML = btnHtml;
     }
-  });
-}
+  } catch (err) {
+    console.error('Certificate verification error:', err);
+    showCertResult(`<h3>Verification Temporarily Unavailable</h3>
+      <p>Please try again shortly or contact us on WhatsApp.</p>`, false);
+  } finally {
+    certBtn.disabled = false;
+    certBtn.innerHTML = btnHtml;
+  }
+});
 
 <!-- TOP BAR -->
 <div class="topbar" role="complementary">
