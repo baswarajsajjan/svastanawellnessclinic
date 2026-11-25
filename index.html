@@ -379,50 +379,149 @@ scroll-snap-align:start;
 .od1{background:var(--GM)}.od2{background:var(--GO)}
 @media(max-width:900px){.orbit{display:none}}
 
-/* ─── CERTIFICATE VERIFICATION ─── */
-#certverify{background:var(--CR)}
-.verify-wrap{max-width:600px;margin:0 auto}
-.verify-card{background:var(--WH);border-radius:var(--RL);padding:2.2rem;border:1px solid var(--BD);box-shadow:var(--SH)}
-.verify-row{display:flex;gap:.7rem;flex-wrap:wrap}
-.verify-row .fg{flex:1;min-width:200px;margin-bottom:0}
-.verify-row .btn{flex-shrink:0;height:fit-content}
-#certResult{margin-top:1.4rem;border-radius:var(--R);padding:1.1rem 1.3rem;font-size:.86rem;display:none}
-#certResult.show{display:block;animation:cardIn .35s ease both}
-#certResult.ok{background:rgba(107,91,149,.08);border:1px solid var(--GL);color:var(--DK)}
-#certResult.bad{background:rgba(185,28,28,.06);border:1px solid rgba(185,28,28,.35);color:#8a1616}
-#certResult dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin-top:.5rem}
-#certResult dt{font-weight:500;color:var(--MT);font-size:.76rem;text-transform:uppercase;letter-spacing:1px}
-#certResult dd{font-size:.86rem}
-.verify-note{font-size:.72rem;color:var(--MT);margin-top:1rem;line-height:1.6}
+/* ── CERTIFICATE VERIFICATION (Google Sheet) ──
+   Sheet: https://docs.google.com/spreadsheets/d/1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM/edit
+   Columns: Certificate ID | Name | Course | Duration | Issue Date | Status
+   The sheet must be shared as "Anyone with the link: Viewer".
+*/
+const CERT_SHEET_ID  = '1kgWSZ20Cu7_Q9N8hYkycOAh3gB33Ef2RIwLRPVX3TZM';
+const CERT_SHEET_GID = '0';
+const CERT_BASE = `https://docs.google.com/spreadsheets/d/${CERT_SHEET_ID}/gviz/tq`;
 
-footer{background:var(--DK);color:rgba(255,255,255,.68);padding:4rem 0 0}
-.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
-@media(max-width:900px){.foot-g{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.foot-g{grid-template-columns:1fr}}
-.fbrand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:.7rem}
-.ftag{font-size:.82rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.45);max-width:260px;margin-bottom:1.3rem}
-.fsoc{display:flex;gap:.55rem}
-.fsoc a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:all .2s}
-.fsoc a:hover{background:var(--GM);color:#fff;transform:translateY(-2px)}
-.fsoc a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
-.fcol h5{font-size:.67rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.38);margin-bottom:1.1rem}
-.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.fcol ul li a,.fcol ul li{font-size:.82rem;color:rgba(255,255,255,.58);transition:color .2s;cursor:pointer}
-.fcol ul li a:hover,.fcol ul li:hover{color:#fff}
-.foot-bot{padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:rgba(255,255,255,.32);flex-wrap:wrap;gap:.6rem}
+function parseCsv(text) {
+  const rows = []; let row = [], field = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i], n = text[i + 1];
+    if (q) {
+      if (c === '"' && n === '"') { field += '"'; i++; }
+      else if (c === '"') q = false;
+      else field += c;
+    } else if (c === '"') q = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (field !== '' || row.length) { row.push(field); rows.push(row); row = []; field = ''; }
+      if (c === '\r' && n === '\n') i++;
+    } else field += c;
+  }
+  if (field !== '' || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(v => String(v).trim() !== ''));
+}
 
-.wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:52px;height:52px;border-radius:50%;background:#9c69b8;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(156,105,184,.38);z-index:400;transition:all .3s;-webkit-tap-highlight-color:transparent}
-.wa-fab:hover,.wa-fab:focus{transform:scale(1.12);box-shadow:0 12px 38px rgba(156,105,184,.48)}
-.wa-fab svg{width:25px;height:25px;fill:white}
+/* Method 1: CSV via fetch */
+async function loadViaCsv() {
+  const res = await fetch(`${CERT_BASE}?tqx=out:csv&gid=${CERT_SHEET_GID}&_=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error('Google returned HTTP ' + res.status);
+  const text = await res.text();
+  if (/^\s*</.test(text)) throw new Error('Sheet is not public (Google sent a login page).');
+  return parseCsv(text);
+}
 
-.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-</style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<div id="toastWrap" aria-live="polite"></div>
+/* Method 2: script-tag (JSONP) fallback, avoids browser CORS problems */
+function loadViaJsonp() {
+  return new Promise((resolve, reject) => {
+    const cb = 'svwCert_' + Date.now();
+    const s = document.createElement('script');
+    const done = () => { clearTimeout(t); delete window[cb]; s.remove(); };
+    const t = setTimeout(() => { done(); reject(new Error('Timed out reaching Google Sheets.')); }, 10000);
+    window[cb] = resp => {
+      done();
+      if (!resp || resp.status === 'error') return reject(new Error('Google Sheets returned an error.'));
+      const cell = c => (c ? (c.f != null ? c.f : (c.v != null ? c.v : '')) : '');
+      const labels = resp.table.cols.map(c => c.label || '');
+      const body = resp.table.rows.map(r => r.c.map(cell));
+      resolve(labels.every(l => !l) ? body : [labels, ...body]);
+    };
+    s.onerror = () => { done(); reject(new Error('Could not load the sheet (is it public?).')); };
+    s.src = `${CERT_BASE}?tqx=responseHandler:${cb}&gid=${CERT_SHEET_GID}&_=${Date.now()}`;
+    document.body.appendChild(s);
+  });
+}
+
+async function loadCertRows() {
+  try { return await loadViaCsv(); }
+  catch (e1) {
+    console.warn('CSV method failed, trying fallback:', e1);
+    try { return await loadViaJsonp(); }
+    catch (e2) { throw new Error(e1.message + ' / ' + e2.message); }
+  }
+}
+
+const certForm   = document.getElementById('certForm');
+const certBtn    = document.getElementById('certBtn');
+const certResult = document.getElementById('certResult');
+
+function showCertResult(html, ok) {
+  certResult.innerHTML = html;
+  certResult.className = 'show ' + (ok ? 'ok' : 'bad');
+}
+const esc = v => escHtml(v == null ? '' : v);
+const normId = v => String(v || '').trim().toLowerCase().replace(/\s+/g, '');
+
+if (certForm && certBtn && certResult) {
+  certForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const query = document.getElementById('cert-id').value.trim();
+    if (!query) { toast('Please enter a certificate ID.', false); return; }
+
+    certBtn.disabled = true;
+    const btnHtml = certBtn.innerHTML;
+    certBtn.innerHTML = '⏳ Checking…';
+
+    try {
+      const rows = await loadCertRows();
+      if (!rows.length) throw new Error('The sheet is empty.');
+
+      const header = rows[0].map(h => String(h).trim().toLowerCase().replace(/\s+/g, ' '));
+      const find = fn => header.findIndex(fn);
+      const idIdx     = find(h => h.includes('certificate') || h === 'id');
+      const nameIdx   = find(h => h.includes('name'));
+      const courseIdx = find(h => h.includes('course') || h.includes('position') || h === 'role');
+      const durIdx    = find(h => h.includes('duration'));
+      const dateIdx   = find(h => h.includes('issue') || h === 'date');
+      const statusIdx = find(h => h.includes('status'));
+
+      if (idIdx === -1) throw new Error('"Certificate ID" column not found. Headers seen: ' + header.join(', '));
+
+      const q = normId(query);
+      const m = rows.slice(1).find(r => normId(r[idIdx]) === q);
+      const get = i => (i >= 0 && m ? String(m[i] || '').trim() : '');
+
+      if (!m) {
+        showCertResult(`
+          <h3>Certificate Not Found</h3>
+          <p>No certificate was found with ID <strong>${esc(query)}</strong>.</p>
+          <p>Please check the ID and try again, or contact Svastana Wellness.</p>`, false);
+        return;
+      }
+
+      let status = get(statusIdx) || 'Valid';
+      status = status.charAt(0).toUpperCase() + status.slice(1).toLowerCase();
+      const valid = status === 'Valid';
+
+      showCertResult(`
+        <h3>${valid ? '✓ Certificate Verified' : '⚠ Certificate ' + esc(status)}</h3>
+        <p>${valid ? 'Issued by Svastana Wellness and found in our official register.' : 'This certificate is in our register but is not currently valid.'}</p>
+        <dl>
+          ${get(nameIdx)   ? `<dt>Name</dt><dd>${esc(get(nameIdx))}</dd>` : ''}
+          ${get(courseIdx) ? `<dt>Course</dt><dd>${esc(get(courseIdx))}</dd>` : ''}
+          ${get(durIdx)    ? `<dt>Duration</dt><dd>${esc(get(durIdx))}</dd>` : ''}
+          ${get(dateIdx)   ? `<dt>Issue Date</dt><dd>${esc(get(dateIdx))}</dd>` : ''}
+          <dt>Status</dt><dd><strong>${esc(status)}</strong></dd>
+        </dl>`, valid);
+
+    } catch (err) {
+      console.error('Certificate verification error:', err);
+      showCertResult(`
+        <h3>Verification Temporarily Unavailable</h3>
+        <p>We could not read the certificate register right now.</p>
+        <p style="font-size:.75rem;opacity:.75">Reason: ${esc(err.message)}</p>
+        <p>Please try again shortly or contact Svastana Wellness via WhatsApp.</p>`, false);
+    } finally {
+      certBtn.disabled = false;
+      certBtn.innerHTML = btnHtml;
+    }
+  });
+}
 
 <!-- TOP BAR -->
 <div class="topbar" role="complementary">
